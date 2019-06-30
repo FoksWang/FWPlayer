@@ -1,0 +1,6 @@
+framework module FWPlayerCore {
+  umbrella header "FWPlayerCore.h"
+
+  export *
+  module * { export * }
+}

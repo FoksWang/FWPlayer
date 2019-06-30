@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FWPlayer_Example' do
+  pod 'FWPlayer', :path => '../'
+
+  target 'FWPlayer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

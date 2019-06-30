@@ -1,0 +1,16 @@
+PODS:
+  - FWPlayer (0.1.0)
+
+DEPENDENCIES:
+  - FWPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  FWPlayer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FWPlayer: 13d11a33e54917a36d21965282f154d5cac84fb6
+
+PODFILE CHECKSUM: ead2d27e56b46d9951f828ba08e035b7d35ae994
+
+COCOAPODS: 1.7.2
