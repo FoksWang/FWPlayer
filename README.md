@@ -4,9 +4,6 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/FWPlayer.svg?style=flat)](https://cocoapods.org/pods/FWPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/FWPlayer.svg?style=flat)](https://cocoapods.org/pods/FWPlayer)
-<a href="www.linkedin.com/in/foks-huiwang">
-<img src="https://img.shields.io/badge/contact-@foks-huiwang.svg?style=flat" alt="LinkedIn: @foks-huiwang" />
-</a>
 
 ## Example
 
