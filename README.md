@@ -12,6 +12,7 @@
 - [x] Supports mini-player position to drag freely
 - [x] Supports the network and local video playback
 - [x] Supports full-screen lock
+- [x] Supports playback while downloading (media cache)
 - [x] Supports vertical slide on the left side of the screen to adjust the brightness
 - [x] Supports the vertical slide on the right side of the screen to adjust the volume
 - [x] Supports gesture swipe fast-forward and rewind
