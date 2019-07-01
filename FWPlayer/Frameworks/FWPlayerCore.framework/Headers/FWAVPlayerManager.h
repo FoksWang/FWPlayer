@@ -27,4 +27,7 @@
  */
 @property (nonatomic, assign) BOOL isEnableMediaCache;
 
+- (NSString *)getVersionNumber;
+- (NSString *)getBuildNumber;
+
 @end
