@@ -26,7 +26,7 @@ A video player SDK for iOS, it is based on AVPlayer.
 - [x] Supports UICollectionView playback
 - [x] Supports UIScrollView playback
 - [x] Supports background playback
-- [x] Supports speed rate playback (0.5x, 1.0x, 1.25x, 1.5x, 2x)
+- [x] Supports speed rate playback (0.5x, 1.0x, 1.25x, 1.5x, 2.0x)
 - [x] Supports custom player view
 - [x] Supports advertising view
 - [x] Supports adding Http headers and other options to AVURLAsset
@@ -130,7 +130,7 @@ self.player!.controlView = self.controlView
 
 ### Must implement in the ViewController if video rotating
 **Objective-C**
-```objc
+```objective-c
 - (BOOL)shouldAutorotate {
     return player.shouldAutorotate;
 }
