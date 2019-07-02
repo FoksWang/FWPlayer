@@ -149,6 +149,7 @@ The function `playback while downloading (Media Cache)` does **NOT** support m3u
 
 **Setup**
 1. Setup `isEnableMediaCache`
+
 **Objective-C**
 ```objc
 playerManager.isEnableMediaCache = YES;
