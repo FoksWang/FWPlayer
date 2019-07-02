@@ -147,7 +147,6 @@ override var shouldAutorotate: Bool {
 
 The function `playback while downloading (Media Cache)` does **NOT** support m3u8, it is commonly used for MP4.
 
-**Setup**
 1. Setup `isEnableMediaCache`
 
 **Objective-C**
