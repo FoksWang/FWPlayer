@@ -125,8 +125,8 @@ self.player = FWPlayerController(scrollView: tableView, playerManager: playerMan
 self.player!.controlView = self.controlView
 ```
 
-- Your custom playerManager must conform `FWPlayerMediaPlayback` protocol.
-- Your custom controlView must conform `FWPlayerMediaControl` protocol.
+- Your custom playerManager must conform to `FWPlayerMediaPlayback` protocol.
+- Your custom controlView must conform to `FWPlayerMediaControl` protocol.
 
 ### Must implement in the ViewController if video rotating
 **Objective-C**
