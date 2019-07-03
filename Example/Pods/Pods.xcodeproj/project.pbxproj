@@ -6,16 +6,24 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		BB0500B381E5559A97DF676224BB4023 /* FWPlayer */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7D33DBB4D7D57E23427C40A3B3CCCC59 /* Build configuration list for PBXAggregateTarget "FWPlayer" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = FWPlayer;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1EB1647D74A5B00601625BB7DC10249D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		23E9D4617D5B69B67EC3CB195C6FD446 /* FWPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7584CB290D50186CA352037B7A36A5D3 /* FWPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AA6C0F24EE11449C0AEDF8DB9B37CE3 /* Pods-FWPlayer_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 937DA72B59F7F7A56B2DAEF3FA583C0A /* Pods-FWPlayer_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		806803F634C87BC85ECADCA11643564E /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C727194E4E9B1DAF26F4BA71820ED14 /* ReplaceMe.swift */; };
 		9F325CC17F0B47F0D09FDBCF7080AD2C /* Pods-FWPlayer_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE6AF170F060EF21B81F91433B73216 /* Pods-FWPlayer_Tests-dummy.m */; };
 		B781A712395FDEA225B5F9C22D5E73A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		BBEB664A2CD101F1A8C5F88C76F3C150 /* FWPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38FCCF7007052E09E347105CED0D6D /* FWPlayer-dummy.m */; };
 		DA9A7BF58AA67BDFE236CF61AF4B892D /* Pods-FWPlayer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AD8E0CC438078EB9A51C75BF9A007 /* Pods-FWPlayer_Example-dummy.m */; };
-		E5C051DF3A74388BC392C61E5A678BE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		F8961EEA3487305F36F410F5F698B150 /* Pods-FWPlayer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 11DAEDC9BC340C67DB4881ECB3B19F7C /* Pods-FWPlayer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -37,38 +45,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B2841B511F216577A71D41918E5502C /* Pods_FWPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B2841B511F216577A71D41918E5502C /* Pods_FWPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FWPlayer_Example.framework; path = "Pods-FWPlayer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DAEDC9BC340C67DB4881ECB3B19F7C /* Pods-FWPlayer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FWPlayer_Example-umbrella.h"; sourceTree = "<group>"; };
-		1C38FCCF7007052E09E347105CED0D6D /* FWPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FWPlayer-dummy.m"; sourceTree = "<group>"; };
-		22BA5BEA919A045A0CCB2EC09F83D9FB /* FWPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = FWPlayer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		2859EFE997ABE04600CBAEA6EA8C72B9 /* FWPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FWPlayer.modulemap; sourceTree = "<group>"; };
+		285E3FC7F0C2CE753F56B40CE4349433 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		29BBFA6A86C484C323B11D7C0B447A55 /* Pods-FWPlayer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FWPlayer_Tests.modulemap"; sourceTree = "<group>"; };
 		2CFADEDC1CDC62353C6C3F011ACD4A91 /* Pods-FWPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FWPlayer_Example.modulemap"; sourceTree = "<group>"; };
+		2F892974276188F3D3D7B416C036005D /* FWPlayerCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FWPlayerCore.framework; path = FWPlayer/Frameworks/FWPlayerCore.framework; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		465F80ACD5E980AFC0CFEF6F05D8E658 /* Pods-FWPlayer_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FWPlayer_Tests-Info.plist"; sourceTree = "<group>"; };
-		5C727194E4E9B1DAF26F4BA71820ED14 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = FWPlayer/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		58DEFB563DFC7B4EF5D1A1F4AAAE0298 /* FWPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FWPlayer.xcconfig; sourceTree = "<group>"; };
+		5E5AD82F6D7E99568331543769E14F73 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		5EBE3DA61F7806AA1B769653F684D003 /* Pods-FWPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FWPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		62114ECEEDE07223F93890F329628737 /* FWPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FWPlayer.xcconfig; sourceTree = "<group>"; };
 		626945A43DECC079276A55B24B977810 /* Pods-FWPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FWPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
-		75676BE25856E839BD5F70F2CC1B1DE8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		7584CB290D50186CA352037B7A36A5D3 /* FWPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FWPlayer-umbrella.h"; sourceTree = "<group>"; };
 		7B230349C9100CC5B379EE49D5A4E90A /* Pods-FWPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FWPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		829AD8E0CC438078EB9A51C75BF9A007 /* Pods-FWPlayer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FWPlayer_Example-dummy.m"; sourceTree = "<group>"; };
 		85A84FE459C3318150B25F4302B7ECDD /* Pods-FWPlayer_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FWPlayer_Example-Info.plist"; sourceTree = "<group>"; };
-		8814C5CF64F266EBCD5B1341B48A742C /* Pods_FWPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8814C5CF64F266EBCD5B1341B48A742C /* Pods_FWPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FWPlayer_Tests.framework; path = "Pods-FWPlayer_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEA8034E0076FE4E8B305840CED40C9 /* Pods-FWPlayer_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FWPlayer_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		937DA72B59F7F7A56B2DAEF3FA583C0A /* Pods-FWPlayer_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FWPlayer_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A07CA6515CDB7BD5E82DCC222FBFE917 /* Pods-FWPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FWPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AFDEE882245CFD4432B5E147C995BCCF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B309449F786C5C20498178EFFD892E07 /* FWPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FWPlayer-prefix.pch"; sourceTree = "<group>"; };
 		B7863C3DC4BD5A38F30D3D04576F81CE /* Pods-FWPlayer_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FWPlayer_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B9E58128E3DABCB48B10BBC4C1407DCE /* FWPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FWPlayer-Info.plist"; sourceTree = "<group>"; };
 		C6BF53517CF5D7A768B5493687980437 /* Pods-FWPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FWPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DBE6AF170F060EF21B81F91433B73216 /* Pods-FWPlayer_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FWPlayer_Tests-dummy.m"; sourceTree = "<group>"; };
 		DCE58F8399237B516A7FCAF039FABC1F /* Pods-FWPlayer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FWPlayer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EE72491A22F096461C500D2E0CA5AD64 /* FWPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FWPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF939A80BB1B8705385BAD5127AB0002 /* Pods-FWPlayer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FWPlayer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		FB26AB4DB31DBBEEFFE405570959A508 /* FWPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FWPlayer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,14 +79,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B781A712395FDEA225B5F9C22D5E73A9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9646AD16F374D15AE1DEB301A53F3CA2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E5C051DF3A74388BC392C61E5A678BE1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +96,7 @@
 		03F9E770C97CE7995CAA14169F7CFE03 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3BB0788092A14CD5414F17F24BA358B /* FWPlayer */,
+				2C0273F43682517761C0300D8F2FF34A /* FWPlayer */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -116,28 +110,25 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4CC59BD1C04E425CD0273DBEFEFB74B5 /* Support Files */ = {
+		2C0273F43682517761C0300D8F2FF34A /* FWPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				2859EFE997ABE04600CBAEA6EA8C72B9 /* FWPlayer.modulemap */,
-				62114ECEEDE07223F93890F329628737 /* FWPlayer.xcconfig */,
-				1C38FCCF7007052E09E347105CED0D6D /* FWPlayer-dummy.m */,
-				B9E58128E3DABCB48B10BBC4C1407DCE /* FWPlayer-Info.plist */,
-				B309449F786C5C20498178EFFD892E07 /* FWPlayer-prefix.pch */,
-				7584CB290D50186CA352037B7A36A5D3 /* FWPlayer-umbrella.h */,
+				BF4F42B2008B2D603A5B102F22A86E55 /* Frameworks */,
+				42B04B1B30884B0CBCE628C81ADA7267 /* Pod */,
+				9C6CBAAAF7C5410589FC3FE951CE0DF9 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/FWPlayer";
+			name = FWPlayer;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		788DF8D5EAC8A9F3B692367EBDFEB3C7 /* Products */ = {
+		42B04B1B30884B0CBCE628C81ADA7267 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				EE72491A22F096461C500D2E0CA5AD64 /* FWPlayer.framework */,
-				0B2841B511F216577A71D41918E5502C /* Pods_FWPlayer_Example.framework */,
-				8814C5CF64F266EBCD5B1341B48A742C /* Pods_FWPlayer_Tests.framework */,
+				FB26AB4DB31DBBEEFFE405570959A508 /* FWPlayer.podspec */,
+				285E3FC7F0C2CE753F56B40CE4349433 /* LICENSE */,
+				5E5AD82F6D7E99568331543769E14F73 /* README.md */,
 			);
-			name = Products;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		8C73E03F487DB42A62093BB8B0678257 /* Pods-FWPlayer_Tests */ = {
@@ -156,14 +147,30 @@
 			path = "Target Support Files/Pods-FWPlayer_Tests";
 			sourceTree = "<group>";
 		};
-		AA83436EED8F002C1D7792776E3549F2 /* Pod */ = {
+		9635DAF2FED8B19EBBFBC2F8007332F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22BA5BEA919A045A0CCB2EC09F83D9FB /* FWPlayer.podspec */,
-				75676BE25856E839BD5F70F2CC1B1DE8 /* LICENSE */,
-				AFDEE882245CFD4432B5E147C995BCCF /* README.md */,
+				0B2841B511F216577A71D41918E5502C /* Pods_FWPlayer_Example.framework */,
+				8814C5CF64F266EBCD5B1341B48A742C /* Pods_FWPlayer_Tests.framework */,
 			);
-			name = Pod;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C6CBAAAF7C5410589FC3FE951CE0DF9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				58DEFB563DFC7B4EF5D1A1F4AAAE0298 /* FWPlayer.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/FWPlayer";
+			sourceTree = "<group>";
+		};
+		BF4F42B2008B2D603A5B102F22A86E55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F892974276188F3D3D7B416C036005D /* FWPlayerCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -197,7 +204,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				03F9E770C97CE7995CAA14169F7CFE03 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				788DF8D5EAC8A9F3B692367EBDFEB3C7 /* Products */,
+				9635DAF2FED8B19EBBFBC2F8007332F7 /* Products */,
 				04FE0DD150C3C7D1B951AFBAE35DE5D9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -208,17 +215,6 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D3BB0788092A14CD5414F17F24BA358B /* FWPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				5C727194E4E9B1DAF26F4BA71820ED14 /* ReplaceMe.swift */,
-				AA83436EED8F002C1D7792776E3549F2 /* Pod */,
-				4CC59BD1C04E425CD0273DBEFEFB74B5 /* Support Files */,
-			);
-			name = FWPlayer;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,14 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8961EEA3487305F36F410F5F698B150 /* Pods-FWPlayer_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FDDCC03F0E82FDF2F7398E59ACAA8F72 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				23E9D4617D5B69B67EC3CB195C6FD446 /* FWPlayer-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,24 +277,6 @@
 			productReference = 0B2841B511F216577A71D41918E5502C /* Pods_FWPlayer_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BB0500B381E5559A97DF676224BB4023 /* FWPlayer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B95B711A35C7D357F3B7AC4FA7BBB53 /* Build configuration list for PBXNativeTarget "FWPlayer" */;
-			buildPhases = (
-				FDDCC03F0E82FDF2F7398E59ACAA8F72 /* Headers */,
-				6D845BC85ED187E12E951B328B975F2F /* Sources */,
-				9646AD16F374D15AE1DEB301A53F3CA2 /* Frameworks */,
-				0E466994258E3457DB1DEE957DC1A943 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FWPlayer;
-			productName = FWPlayer;
-			productReference = EE72491A22F096461C500D2E0CA5AD64 /* FWPlayer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -324,7 +294,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 788DF8D5EAC8A9F3B692367EBDFEB3C7 /* Products */;
+			productRefGroup = 9635DAF2FED8B19EBBFBC2F8007332F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -336,13 +306,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0E466994258E3457DB1DEE957DC1A943 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		47DDF0F0AE64DD93E3080247E5EC0515 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,15 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F325CC17F0B47F0D09FDBCF7080AD2C /* Pods-FWPlayer_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D845BC85ED187E12E951B328B975F2F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BBEB664A2CD101F1A8C5F88C76F3C150 /* FWPlayer-dummy.m in Sources */,
-				806803F634C87BC85ECADCA11643564E /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,38 +357,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		006391B15CBC3E26D7D6987335900FAB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62114ECEEDE07223F93890F329628737 /* FWPlayer.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FWPlayer/FWPlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FWPlayer/FWPlayer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FWPlayer/FWPlayer.modulemap";
-				PRODUCT_MODULE_NAME = FWPlayer;
-				PRODUCT_NAME = FWPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		0B19AAB96505E4189017B4DECF1ADACD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6BF53517CF5D7A768B5493687980437 /* Pods-FWPlayer_Example.release.xcconfig */;
@@ -622,9 +544,24 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B4A6422D6848DD679CC90BEC2268D14E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58DEFB563DFC7B4EF5D1A1F4AAAE0298 /* FWPlayer.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -692,54 +629,36 @@
 			};
 			name = Debug;
 		};
-		E7C5720B6E44A3632AAC64C1C14C2912 /* Debug */ = {
+		C51C4829C6BEE1482588D8011CE117DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62114ECEEDE07223F93890F329628737 /* FWPlayer.xcconfig */;
+			baseConfigurationReference = 58DEFB563DFC7B4EF5D1A1F4AAAE0298 /* FWPlayer.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FWPlayer/FWPlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FWPlayer/FWPlayer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FWPlayer/FWPlayer.modulemap";
-				PRODUCT_MODULE_NAME = FWPlayer;
-				PRODUCT_NAME = FWPlayer;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0B95B711A35C7D357F3B7AC4FA7BBB53 /* Build configuration list for PBXNativeTarget "FWPlayer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E7C5720B6E44A3632AAC64C1C14C2912 /* Debug */,
-				006391B15CBC3E26D7D6987335900FAB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
 				B0087CB4594321EF41619F3181FE120E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D33DBB4D7D57E23427C40A3B3CCCC59 /* Build configuration list for PBXAggregateTarget "FWPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C51C4829C6BEE1482588D8011CE117DF /* Debug */,
+				B4A6422D6848DD679CC90BEC2268D14E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

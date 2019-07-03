@@ -313,11 +313,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FWPlayer_Example/Pods-FWPlayer_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FWPlayer/FWPlayer.framework",
+				"${PODS_ROOT}/../../FWPlayer/Frameworks/FWPlayerCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWPlayerCore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
