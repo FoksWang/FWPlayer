@@ -1,5 +1,6 @@
 # FWPlayer
 
+![Swift5](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat%22)
 [![Version](https://img.shields.io/cocoapods/v/FWPlayer.svg?style=flat)](https://cocoapods.org/pods/FWPlayer)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/FWPlayer.svg?style=flat)](https://cocoapods.org/pods/FWPlayer)
