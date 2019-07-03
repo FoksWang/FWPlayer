@@ -1,0 +1,6 @@
+framework module TYCyclePagerView {
+  umbrella header "TYCyclePagerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

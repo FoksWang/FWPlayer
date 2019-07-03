@@ -4,6 +4,29 @@ platform :ios, '9.0'
 
 target 'FWPlayer_Example' do
   pod 'FWPlayer', :path => '../'
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  
+  pod 'SideMenu'
+  pod 'SnapKit'
+  pod 'Kingfisher'
+  pod 'MBProgressHUD'
+  pod 'IQKeyboardManagerSwift'
+  
+  pod 'Alamofire'
+  pod 'Moya'
+  pod 'HandyJSON'
+  pod 'SwiftyJSON'
+  
+  pod 'TYCyclePagerView'
+  
+  # pod 'MJRefresh'
+  # pod 'TYPagerController'
+  # pod 'SKPhotoBrowser'
+  # pod '1PasswordExtension'
+  # pod 'SkeletonView'
 
   target 'FWPlayer_Tests' do
     inherit! :search_paths
