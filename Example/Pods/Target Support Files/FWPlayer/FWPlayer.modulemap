@@ -1,6 +1,0 @@
-framework module FWPlayer {
-  umbrella header "FWPlayer-umbrella.h"
-
-  export *
-  module * { export * }
-}

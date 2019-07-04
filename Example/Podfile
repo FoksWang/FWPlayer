@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'FWPlayer_Example' do
   pod 'FWPlayer', :path => '../'
@@ -9,7 +9,7 @@ target 'FWPlayer_Example' do
   pod 'RxCocoa'
   pod 'RxDataSources'
   
-  pod 'SideMenu'
+  pod 'SideMenuSwift'
   pod 'SnapKit'
   pod 'Kingfisher'
   pod 'MBProgressHUD'

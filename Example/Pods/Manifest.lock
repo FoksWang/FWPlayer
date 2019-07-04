@@ -4,7 +4,7 @@ PODS:
   - FWPlayer (1.0.3)
   - HandyJSON (5.0.0)
   - IQKeyboardManagerSwift (6.4.0)
-  - Kingfisher (4.10.1)
+  - Kingfisher (5.6.0)
   - MBProgressHUD (1.1.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -22,8 +22,8 @@ PODS:
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
-  - SideMenu (5.0.1)
-  - SnapKit (4.2.0)
+  - SideMenuSwift (2.0.1)
+  - SnapKit (5.0.0)
   - SwiftyJSON (5.0.0)
   - TYCyclePagerView (1.2.0)
 
@@ -38,7 +38,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
-  - SideMenu
+  - SideMenuSwift
   - SnapKit
   - SwiftyJSON
   - TYCyclePagerView
@@ -57,7 +57,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
-    - SideMenu
+    - SideMenuSwift
     - SnapKit
     - SwiftyJSON
     - TYCyclePagerView
@@ -72,7 +72,7 @@ SPEC CHECKSUMS:
   FWPlayer: 9403405bacd33aa3f060fee38de21cbb7963ca70
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
@@ -80,11 +80,11 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SideMenuSwift: 588374781f2508f551a41796482290aeff1afd78
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TYCyclePagerView: 2b051dade0615c70784aa34f40c646feeddb7344
 
-PODFILE CHECKSUM: dc5a189ee09cd73c19033720656fb0814daabcf6
+PODFILE CHECKSUM: 1c064e8f84a62ca98fa1a8dd8c940b7c999ee6c4
 
 COCOAPODS: 1.7.2

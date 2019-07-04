@@ -1,5 +1,4 @@
 import XCTest
-import FWPlayer
 
 class Tests: XCTestCase {
     
