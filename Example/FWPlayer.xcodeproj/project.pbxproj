@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2820A5D96D22577B4DC60441 /* Pods_FWPlayer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBB0E4C331B6989C3E332C6 /* Pods_FWPlayer_Tests.framework */; };
-		35E7AEC522CD796F00A7FE26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEC122CD796F00A7FE26 /* ViewController.swift */; };
+		35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */; };
+		35E7AEDF22CE2D0F00A7FE26 /* ContentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */; };
+		35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */; };
+		35E7AEE522CE3ECD00A7FE26 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEE422CE3ECD00A7FE26 /* AboutViewController.swift */; };
 		5051AE14BC8CE8FAFF98E4E7 /* Pods_FWPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D359AB553AA1483F2094C3E /* Pods_FWPlayer_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,7 +33,10 @@
 /* Begin PBXFileReference section */
 		0D359AB553AA1483F2094C3E /* Pods_FWPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADD2BD5E860A660A40E9681 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		35E7AEC122CD796F00A7FE26 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentNavigationController.swift; sourceTree = "<group>"; };
+		35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		35E7AEE422CE3ECD00A7FE26 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4E99F328479CC89BF56FBFF1 /* Pods-FWPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-FWPlayer_Example/Pods-FWPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5468402DE3622F77BD057D31 /* Pods-FWPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWPlayer_Tests.release.xcconfig"; path = "Target Support Files/Pods-FWPlayer_Tests/Pods-FWPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* FWPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +86,7 @@
 		35E7AEBC22CD796F00A7FE26 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -87,7 +94,9 @@
 		35E7AEBD22CD796F00A7FE26 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				35E7AEE222CE3E2200A7FE26 /* About */,
 				35E7AEBE22CD796F00A7FE26 /* Home */,
+				35E7AEC722CE206B00A7FE26 /* SideMenu */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -114,7 +123,7 @@
 		35E7AEC022CD796F00A7FE26 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				35E7AEC122CD796F00A7FE26 /* ViewController.swift */,
+				35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -138,6 +147,70 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		35E7AEC722CE206B00A7FE26 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				35E7AEC822CE206B00A7FE26 /* ViewModel */,
+				35E7AEC922CE206B00A7FE26 /* Controller */,
+				35E7AECB22CE206B00A7FE26 /* Model */,
+				35E7AECC22CE206B00A7FE26 /* View */,
+				35E7AECD22CE206B00A7FE26 /* API */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		35E7AEC822CE206B00A7FE26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		35E7AEC922CE206B00A7FE26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		35E7AECB22CE206B00A7FE26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35E7AECC22CE206B00A7FE26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35E7AECD22CE206B00A7FE26 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		35E7AEE222CE3E2200A7FE26 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				35E7AEE322CE3E2200A7FE26 /* Controller */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		35E7AEE322CE3E2200A7FE26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35E7AEE422CE3ECD00A7FE26 /* AboutViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5F744BF01024056958111FD4 /* Pods */ = {
@@ -401,6 +474,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TYCyclePagerView/TYCyclePagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -421,6 +495,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYCyclePagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -434,8 +509,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35E7AEC522CD796F00A7FE26 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				35E7AEDF22CE2D0F00A7FE26 /* ContentNavigationController.swift in Sources */,
+				35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */,
+				35E7AEE522CE3ECD00A7FE26 /* AboutViewController.swift in Sources */,
+				35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

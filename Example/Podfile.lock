@@ -25,6 +25,7 @@ PODS:
   - SideMenuSwift (2.0.1)
   - SnapKit (5.0.0)
   - SwiftyJSON (5.0.0)
+  - Then (2.5.0)
   - TYCyclePagerView (1.2.0)
 
 DEPENDENCIES:
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - SideMenuSwift
   - SnapKit
   - SwiftyJSON
+  - Then
   - TYCyclePagerView
 
 SPEC REPOS:
@@ -60,6 +62,7 @@ SPEC REPOS:
     - SideMenuSwift
     - SnapKit
     - SwiftyJSON
+    - Then
     - TYCyclePagerView
 
 EXTERNAL SOURCES:
@@ -83,8 +86,9 @@ SPEC CHECKSUMS:
   SideMenuSwift: 588374781f2508f551a41796482290aeff1afd78
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Then: 0157115e883545c77967b452fe74a1d25fb796e1
   TYCyclePagerView: 2b051dade0615c70784aa34f40c646feeddb7344
 
-PODFILE CHECKSUM: 1c064e8f84a62ca98fa1a8dd8c940b7c999ee6c4
+PODFILE CHECKSUM: e9e1aa438c20bcc6a9a2233b5129086fda66d07f
 
 COCOAPODS: 1.7.2
