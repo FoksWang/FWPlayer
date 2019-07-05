@@ -7,8 +7,9 @@ target 'FWPlayer_Example' do
   
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RxDataSources'
-  
+  # pod 'RxDataSources'
+  pod 'NSObject+Rx'
+
   pod 'SideMenuSwift'
   pod 'SnapKit'
   pod 'Kingfisher'
@@ -22,6 +23,7 @@ target 'FWPlayer_Example' do
   pod 'SwiftyJSON'
   
   pod 'TYCyclePagerView'
+  pod 'SwiftyColor'
   
   # pod 'MJRefresh'
   # pod 'TYPagerController'

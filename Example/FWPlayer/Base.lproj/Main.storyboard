@@ -23,167 +23,37 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="kIV-Di-zax" kind="custom" identifier="SideMenu.Menu" customClass="SideMenuSegue" customModule="SideMenuSwift" id="Lvn-bP-olQ"/>
-                        <segue destination="1Ql-hN-YaH" kind="custom" identifier="SideMenu.Content" customClass="SideMenuSegue" customModule="SideMenuSwift" id="2OY-Q6-5ih"/>
+                        <segue destination="uTg-E4-Vam" kind="custom" identifier="SideMenu.Menu" customClass="SideMenuSegue" customModule="SideMenuSwift" id="Lvn-bP-olQ"/>
+                        <segue destination="Z4F-QP-ABh" kind="custom" identifier="SideMenu.Content" customClass="SideMenuSegue" customModule="SideMenuSwift" id="2OY-Q6-5ih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="54" y="105"/>
         </scene>
-        <!--Home View Controller-->
-        <scene sceneID="vj6-hL-gkr">
+        <!--SideMenuViewController-->
+        <scene sceneID="XOS-XK-fqC">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DHl-1h-SXO" customClass="HomeViewController" customModule="FWPlayer_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HTd-jf-f6U"/>
-                        <viewControllerLayoutGuide type="bottom" id="RnH-ww-Juj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HDz-kW-Jtm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oij-2j-1iw">
-                                <rect key="frame" x="124" y="164" width="50" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="8F2-p3-Ixu"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RE0-Rd-oyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="SideMenuViewController" storyboardName="SideMenu" referencedIdentifier="SideMenuViewController" id="uTg-E4-Vam" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hf8-Yb-qV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914.4000000000001" y="-347.67616191904051"/>
+            <point key="canvasLocation" x="739" y="-227"/>
         </scene>
-        <!--Side Menu View Controller-->
-        <scene sceneID="27T-Yr-w5f">
+        <!--HomeNavigationController-->
+        <scene sceneID="Bbz-lc-UjE">
             <objects>
-                <viewController storyboardIdentifier="SideMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kIV-Di-zax" customClass="SideMenuViewController" customModule="FWPlayer_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Moi-Yj-VxA"/>
-                        <viewControllerLayoutGuide type="bottom" id="jkX-Pf-0Wu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aBr-We-9Yp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tM2-hD-Vqf">
-                                <rect key="frame" x="80" y="20" width="240" height="548"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqI-wB-Oi5">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A13-IT-j90">
-                                                <rect key="frame" x="99" y="9.5" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.38823529410000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="A13-IT-j90" firstAttribute="centerY" secondItem="zqI-wB-Oi5" secondAttribute="centerY" id="L2X-fR-Cn5"/>
-                                            <constraint firstAttribute="height" constant="40" id="Qjq-bM-hqt"/>
-                                            <constraint firstItem="A13-IT-j90" firstAttribute="centerX" secondItem="zqI-wB-Oi5" secondAttribute="centerX" id="dnL-rs-KEL"/>
-                                        </constraints>
-                                    </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SGK-iV-bLr">
-                                        <rect key="frame" x="0.0" y="40" width="240" height="508"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="zqI-wB-Oi5" secondAttribute="trailing" id="0h1-Ms-wcO"/>
-                                    <constraint firstItem="zqI-wB-Oi5" firstAttribute="leading" secondItem="tM2-hD-Vqf" secondAttribute="leading" id="461-qM-cvc"/>
-                                    <constraint firstItem="zqI-wB-Oi5" firstAttribute="top" secondItem="tM2-hD-Vqf" secondAttribute="top" id="W5V-cl-vPC"/>
-                                    <constraint firstAttribute="trailing" secondItem="SGK-iV-bLr" secondAttribute="trailing" id="WLg-Pm-rao"/>
-                                    <constraint firstItem="SGK-iV-bLr" firstAttribute="top" secondItem="zqI-wB-Oi5" secondAttribute="bottom" id="ZTK-E7-KBF"/>
-                                    <constraint firstAttribute="width" constant="240" id="gRu-ut-NqI"/>
-                                    <constraint firstAttribute="bottom" secondItem="SGK-iV-bLr" secondAttribute="bottom" id="gkg-iB-Hdi"/>
-                                    <constraint firstItem="SGK-iV-bLr" firstAttribute="leading" secondItem="tM2-hD-Vqf" secondAttribute="leading" id="ve3-pc-Fxh"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tM2-hD-Vqf" secondAttribute="trailing" id="JqZ-Zb-i3i"/>
-                            <constraint firstItem="tM2-hD-Vqf" firstAttribute="top" secondItem="Moi-Yj-VxA" secondAttribute="bottom" id="PQJ-Mv-ipn"/>
-                            <constraint firstItem="jkX-Pf-0Wu" firstAttribute="top" secondItem="tM2-hD-Vqf" secondAttribute="bottom" id="gJ7-v0-7UM"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2AC-nb-VsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="HomeNavigationController" storyboardName="Home" referencedIdentifier="HomeNavigationController" id="Z4F-QP-ABh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8a-g3-GnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="395.07042253521126"/>
+            <point key="canvasLocation" x="953" y="-83"/>
         </scene>
-        <!--Content Navigation Controller-->
-        <scene sceneID="bi8-Tp-Tv6">
+        <!--AboutNavigationController-->
+        <scene sceneID="194-lf-TQf">
             <objects>
-                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Ql-hN-YaH" customClass="ContentNavigationController" customModule="FWPlayer_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K4A-o6-jCN">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="DHl-1h-SXO" kind="relationship" relationship="rootViewController" id="R7G-6A-bzg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PWz-zd-SBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="AboutNavigationController" storyboardName="About" referencedIdentifier="AboutNavigationController" id="dIe-3r-feF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qE8-fc-CfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975.20000000000005" y="-347.67616191904051"/>
-        </scene>
-        <!--About View Controller-->
-        <scene sceneID="637-Bc-2ZT">
-            <objects>
-                <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XFW-XC-VyH" customClass="AboutViewController" customModule="FWPlayer_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lvA-OU-lk4"/>
-                        <viewControllerLayoutGuide type="bottom" id="WB6-8C-TTl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="etn-iw-YXO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahD-Ry-Har">
-                                <rect key="frame" x="124" y="164" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="4DR-9C-MTS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XE0-dh-wiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1914" y="1120"/>
-        </scene>
-        <!--Content Navigation Controller-->
-        <scene sceneID="e2m-Kr-u6k">
-            <objects>
-                <navigationController storyboardIdentifier="AboutNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MR8-rx-9y3" customClass="ContentNavigationController" customModule="FWPlayer_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nOG-sy-z9V">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XFW-XC-VyH" kind="relationship" relationship="rootViewController" id="9jd-WB-FaR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qwj-26-vuY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="975" y="1120"/>
+            <point key="canvasLocation" x="952" y="6"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,6 @@
+framework module SwiftyColor {
+  umbrella header "SwiftyColor-umbrella.h"
+
+  export *
+  module * { export * }
+}
