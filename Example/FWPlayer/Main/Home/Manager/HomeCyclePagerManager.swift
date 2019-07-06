@@ -1,5 +1,5 @@
 //
-//  CyclePagerManager.swift
+//  HomeCyclePagerManager.swift
 //  FWPlayer_Example
 //
 //  Created by Hui Wang on 2019-07-06.
@@ -12,21 +12,21 @@ import Then
 import Kingfisher
 import SnapKit
 
-class CyclePagerManager: NSObject {
+class HomeCyclePagerManager: NSObject {
     
     private var data = [VideoModel]()
     private var parentView: UIView!
     
     private lazy var pagerView = TYCyclePagerView().then {
         $0.isInfiniteLoop = true
-        $0.autoScrollInterval = 3.0
+        $0.autoScrollInterval = 4.0
     }
     
     private lazy var pageControl = TYPageControl().then {
         $0.currentPageIndicatorSize = CGSize(width: 8, height: 8)
     }
     
-    // Mark: -数据源更新
+    /// Data update
     typealias DidSelectedItemBlock = (_ videoModel: VideoModel) -> Void
     var didSelectedItemBlock: DidSelectedItemBlock?
     
@@ -48,7 +48,7 @@ class CyclePagerManager: NSObject {
         self.pagerView.layer.borderWidth = 1
         self.pagerView.dataSource = self
         self.pagerView.delegate = self
-        self.pagerView.register(UINib(nibName: CyclePagerViewCell.className, bundle: nil), forCellWithReuseIdentifier: CyclePagerViewCell.reuseIdentifier)
+        self.pagerView.register(UINib(nibName: HomeCyclePagerViewCell.className, bundle: nil), forCellWithReuseIdentifier: HomeCyclePagerViewCell.reuseIdentifier)
         self.parentView.addSubview(pagerView)
     }
     
@@ -79,14 +79,13 @@ class CyclePagerManager: NSObject {
     }
 }
 
-extension CyclePagerManager: TYCyclePagerViewDelegate, TYCyclePagerViewDataSource {
+extension HomeCyclePagerManager: TYCyclePagerViewDelegate, TYCyclePagerViewDataSource {
     func numberOfItems(in pageView: TYCyclePagerView) -> Int {
         return self.data.count
     }
     
     func pagerView(_ pagerView: TYCyclePagerView, cellForItemAt index: Int) -> UICollectionViewCell {
-        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: CyclePagerViewCell.reuseIdentifier, for: index) as! CyclePagerViewCell
-        Logging("index = \(index), data[index].imageUrl = \(data[index].imageUrl!)")
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: HomeCyclePagerViewCell.reuseIdentifier, for: index) as! HomeCyclePagerViewCell
         cell.imageView.image = UIImage(named: data[index].imageUrl!)
         return cell
     }
@@ -98,7 +97,7 @@ extension CyclePagerManager: TYCyclePagerViewDelegate, TYCyclePagerViewDataSourc
         layout.itemHorizontalCenter = true
         return layout
     }
-
+    
     func pagerView(_ pageView: TYCyclePagerView, didScrollFrom fromIndex: Int, to toIndex: Int) {
         self.pageControl.currentPage = toIndex;
     }

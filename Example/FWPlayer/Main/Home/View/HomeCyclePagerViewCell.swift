@@ -1,5 +1,5 @@
 //
-//  CyclePagerViewCell.swift
+//  HomeCyclePagerViewCell.swift
 //  FWPlayer_Example
 //
 //  Created by Hui Wang on 2019-07-06.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CyclePagerViewCell: UICollectionViewCell {
-    
+class HomeCyclePagerViewCell: UICollectionViewCell {
+
     @IBOutlet weak var imageView: UIImageView!
     
-    static let className = "CyclePagerViewCell"
+    static let className = "HomeCyclePagerViewCell"
     static let reuseIdentifier = className
     
     override func awakeFromNib() {

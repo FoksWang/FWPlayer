@@ -24,10 +24,10 @@
 		35E7AF0B22D0D13300A7FE26 /* trailer_astra.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 35E7AF0722D0D13300A7FE26 /* trailer_astra.mp4 */; };
 		35E7AF0C22D0D13300A7FE26 /* trailer_lion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 35E7AF0822D0D13300A7FE26 /* trailer_lion.mp4 */; };
 		35E7AF0D22D0D13300A7FE26 /* trailer_birds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 35E7AF0922D0D13300A7FE26 /* trailer_birds.mp4 */; };
-		35E7AF1222D0DD4800A7FE26 /* CyclePagerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AF1122D0DD4800A7FE26 /* CyclePagerManager.swift */; };
 		35E7AF1422D0E06600A7FE26 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AF1322D0E06600A7FE26 /* VideoModel.swift */; };
-		35E7AF1722D1127B00A7FE26 /* CyclePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AF1522D1127B00A7FE26 /* CyclePagerViewCell.swift */; };
-		35E7AF1822D1127B00A7FE26 /* CyclePagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E7AF1622D1127B00A7FE26 /* CyclePagerViewCell.xib */; };
+		35E7AF1A22D1426700A7FE26 /* HomeCyclePagerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AF1922D1426700A7FE26 /* HomeCyclePagerManager.swift */; };
+		35E7AF1D22D1430000A7FE26 /* HomeCyclePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AF1B22D1430000A7FE26 /* HomeCyclePagerViewCell.swift */; };
+		35E7AF1E22D1430000A7FE26 /* HomeCyclePagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E7AF1C22D1430000A7FE26 /* HomeCyclePagerViewCell.xib */; };
 		5051AE14BC8CE8FAFF98E4E7 /* Pods_FWPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D359AB553AA1483F2094C3E /* Pods_FWPlayer_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -65,10 +65,10 @@
 		35E7AF0722D0D13300A7FE26 /* trailer_astra.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = trailer_astra.mp4; sourceTree = "<group>"; };
 		35E7AF0822D0D13300A7FE26 /* trailer_lion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = trailer_lion.mp4; sourceTree = "<group>"; };
 		35E7AF0922D0D13300A7FE26 /* trailer_birds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = trailer_birds.mp4; sourceTree = "<group>"; };
-		35E7AF1122D0DD4800A7FE26 /* CyclePagerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclePagerManager.swift; sourceTree = "<group>"; };
 		35E7AF1322D0E06600A7FE26 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
-		35E7AF1522D1127B00A7FE26 /* CyclePagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclePagerViewCell.swift; sourceTree = "<group>"; };
-		35E7AF1622D1127B00A7FE26 /* CyclePagerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CyclePagerViewCell.xib; sourceTree = "<group>"; };
+		35E7AF1922D1426700A7FE26 /* HomeCyclePagerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCyclePagerManager.swift; sourceTree = "<group>"; };
+		35E7AF1B22D1430000A7FE26 /* HomeCyclePagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCyclePagerViewCell.swift; sourceTree = "<group>"; };
+		35E7AF1C22D1430000A7FE26 /* HomeCyclePagerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCyclePagerViewCell.xib; sourceTree = "<group>"; };
 		4E99F328479CC89BF56FBFF1 /* Pods-FWPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-FWPlayer_Example/Pods-FWPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5468402DE3622F77BD057D31 /* Pods-FWPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWPlayer_Tests.release.xcconfig"; path = "Target Support Files/Pods-FWPlayer_Tests/Pods-FWPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* FWPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,9 +175,9 @@
 		35E7AEC322CD796F00A7FE26 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				35E7AF1522D1127B00A7FE26 /* CyclePagerViewCell.swift */,
-				35E7AF1622D1127B00A7FE26 /* CyclePagerViewCell.xib */,
 				35E7AEF422CEB71F00A7FE26 /* Home.storyboard */,
+				35E7AF1B22D1430000A7FE26 /* HomeCyclePagerViewCell.swift */,
+				35E7AF1C22D1430000A7FE26 /* HomeCyclePagerViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 		35E7AF1022D0DD4800A7FE26 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				35E7AF1122D0DD4800A7FE26 /* CyclePagerManager.swift */,
+				35E7AF1922D1426700A7FE26 /* HomeCyclePagerManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -457,9 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E7AF0A22D0D13300A7FE26 /* trailer_avengers.mp4 in Resources */,
-				35E7AF1822D1127B00A7FE26 /* CyclePagerViewCell.xib in Resources */,
 				35E7AEF322CEB68300A7FE26 /* SideMenu.storyboard in Resources */,
 				35E7AF0122CFDCFE00A7FE26 /* About.storyboard in Resources */,
+				35E7AF1E22D1430000A7FE26 /* HomeCyclePagerViewCell.xib in Resources */,
 				35E7AEF522CEB71F00A7FE26 /* Home.storyboard in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				35E7AF0B22D0D13300A7FE26 /* trailer_astra.mp4 in Resources */,
@@ -586,13 +586,13 @@
 			files = (
 				35E7AEF822CEC4FB00A7FE26 /* Common.swift in Sources */,
 				35E7AF0322CFE76400A7FE26 /* HomeViewModel.swift in Sources */,
+				35E7AF1D22D1430000A7FE26 /* HomeCyclePagerViewCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				35E7AEDF22CE2D0F00A7FE26 /* ContentNavigationController.swift in Sources */,
-				35E7AF1222D0DD4800A7FE26 /* CyclePagerManager.swift in Sources */,
-				35E7AF1722D1127B00A7FE26 /* CyclePagerViewCell.swift in Sources */,
 				35E7AEFE22CF72A900A7FE26 /* UIImageExtension.swift in Sources */,
 				35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */,
 				35E7AEE522CE3ECD00A7FE26 /* AboutViewController.swift in Sources */,
+				35E7AF1A22D1426700A7FE26 /* HomeCyclePagerManager.swift in Sources */,
 				35E7AEFB22CECE3500A7FE26 /* SideMenuTableViewCell.swift in Sources */,
 				35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */,
 				35E7AF1422D0E06600A7FE26 /* VideoModel.swift in Sources */,

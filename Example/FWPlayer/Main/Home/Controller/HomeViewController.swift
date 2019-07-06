@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBOutlet weak var cyclePagerContainer: UIView!
-    private var cyclePagerManager: CyclePagerManager?
+    private var cyclePagerManager: HomeCyclePagerManager?
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var titleImageView = UIImageView().then {
@@ -74,9 +74,9 @@ extension HomeViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
         
-        self.cyclePagerManager = CyclePagerManager(parentView: cyclePagerContainer, data: viewModel.cyclePagerArray, didSelectedItemBlock: { [weak self] (videoModel) in
+        self.cyclePagerManager = HomeCyclePagerManager(parentView: cyclePagerContainer, data: viewModel.cyclePagerArray, didSelectedItemBlock: { [weak self] (videoModel) in
             guard let self = self else { return }
-            self.pushViewController()
+            self.pushViewController(videoModel)
         })
     }
 }
@@ -89,6 +89,7 @@ extension HomeViewController {
 
 // MARK:- Navigation
 extension HomeViewController {
-    private func pushViewController() {
+    private func pushViewController(_ videoModel: VideoModel) {
+        Logging("pushViewController")
     }
 }
