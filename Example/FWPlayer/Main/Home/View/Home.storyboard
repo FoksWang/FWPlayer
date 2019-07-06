@@ -21,18 +21,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oij-2j-1iw">
-                                <rect key="frame" x="124" y="164" width="50" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mgo-Zg-cZb" userLabel="CyclePagerContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mgo-Zg-cZb" secondAttribute="height" multiplier="16:9" id="DyG-gn-SCD"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ack-N4-tpk">
+                                <rect key="frame" x="0.0" y="180" width="320" height="324"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ack-N4-tpk" firstAttribute="top" secondItem="Mgo-Zg-cZb" secondAttribute="bottom" id="De3-2Q-TUH"/>
+                            <constraint firstItem="Mgo-Zg-cZb" firstAttribute="top" secondItem="HTd-jf-f6U" secondAttribute="bottom" id="EL2-rI-4Fv"/>
+                            <constraint firstAttribute="trailing" secondItem="Ack-N4-tpk" secondAttribute="trailing" id="HRP-C9-COy"/>
+                            <constraint firstAttribute="trailing" secondItem="Mgo-Zg-cZb" secondAttribute="trailing" id="X9o-hv-a32"/>
+                            <constraint firstItem="RnH-ww-Juj" firstAttribute="top" secondItem="Ack-N4-tpk" secondAttribute="bottom" id="mYU-V8-Ddt"/>
+                            <constraint firstItem="Mgo-Zg-cZb" firstAttribute="leading" secondItem="HDz-kW-Jtm" secondAttribute="leading" id="uBK-hD-0J5"/>
+                            <constraint firstItem="Ack-N4-tpk" firstAttribute="leading" secondItem="HDz-kW-Jtm" secondAttribute="leading" id="uNd-fi-Kpg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="DEMO" id="fKc-He-ilg"/>
                     <connections>
+                        <outlet property="cyclePagerContainer" destination="Mgo-Zg-cZb" id="cbC-Mq-Sjr"/>
+                        <outlet property="tableView" destination="Ack-N4-tpk" id="axR-3U-jHD"/>
                         <outlet property="titleNavItem" destination="fKc-He-ilg" id="trP-7Y-SwN"/>
                     </connections>
                 </viewController>

@@ -11,14 +11,21 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 import Then
+import TYCyclePagerView
 
 class HomeViewController: UIViewController {
+    
+    var viewModel = HomeViewModel()
     
     @IBOutlet weak var titleNavItem: UINavigationItem! {
         didSet {
             titleNavItem.titleView = titleImageView
         }
     }
+    
+    @IBOutlet weak var cyclePagerContainer: UIView!
+    private var cyclePagerManager: CyclePagerManager?
+    @IBOutlet weak var tableView: UITableView!
     
     private lazy var titleImageView = UIImageView().then {
         let itemWidth = 53
@@ -50,10 +57,14 @@ class HomeViewController: UIViewController {
             Logging("rightBarButton click")
         }).disposed(by: rx.disposeBag)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        self.cyclePagerManager?.viewWillLayoutSubviews()
     }
 }
 
@@ -62,9 +73,22 @@ extension HomeViewController {
     private func setupUI() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+        
+        self.cyclePagerManager = CyclePagerManager(parentView: cyclePagerContainer, data: viewModel.cyclePagerArray, didSelectedItemBlock: { [weak self] (videoModel) in
+            guard let self = self else { return }
+            self.pushViewController()
+        })
     }
 }
 
 // MARK:- Setup data
 extension HomeViewController {
+    private func setupData() {
+    }
+}
+
+// MARK:- Navigation
+extension HomeViewController {
+    private func pushViewController() {
+    }
 }

@@ -42,8 +42,6 @@ extension SideMenuViewController {
     }
 }
 
-
-
 // MARK:- SideMenuControllerDelegate
 extension SideMenuViewController: SideMenuControllerDelegate {
     func sideMenuController(_ sideMenuController: SideMenuController,
