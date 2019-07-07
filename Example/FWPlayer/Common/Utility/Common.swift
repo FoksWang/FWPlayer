@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+let fwScreenWidth = UIScreen.main.bounds.size.width
+let fwScreenHeight = UIScreen.main.bounds.size.height
 
 func Logging<T>(_ message : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
     #if DEBUG

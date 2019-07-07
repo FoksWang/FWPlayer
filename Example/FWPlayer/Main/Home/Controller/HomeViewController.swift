@@ -14,7 +14,6 @@ import Then
 import TYCyclePagerView
 
 class HomeViewController: UIViewController {
-    
     var viewModel = HomeViewModel()
     
     @IBOutlet weak var titleNavItem: UINavigationItem! {
@@ -23,9 +22,12 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var cyclePagerContainer: UIView!
-    private var cyclePagerManager: HomeCyclePagerManager?
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.collectionViewLayout = UICollectionViewFlowLayout.init()
+            collectionView.register(HomeCyclePagerContainerCell.self, forCellWithReuseIdentifier: HomeCyclePagerContainerCell.reuseIdentifier)
+        }
+    }
     
     private lazy var titleImageView = UIImageView().then {
         let itemWidth = 53
@@ -61,10 +63,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        self.cyclePagerManager?.viewWillLayoutSubviews()
+        setupData()
     }
 }
 
@@ -73,17 +72,16 @@ extension HomeViewController {
     private func setupUI() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
-        
-        self.cyclePagerManager = HomeCyclePagerManager(parentView: cyclePagerContainer, data: viewModel.cyclePagerArray, didSelectedItemBlock: { [weak self] (videoModel) in
-            guard let self = self else { return }
-            self.pushViewController(videoModel)
-        })
     }
 }
 
 // MARK:- Setup data
 extension HomeViewController {
     private func setupData() {
+        viewModel.updateDataBlock = { [unowned self] in
+            self.collectionView.reloadData()
+        }
+        viewModel.loadData()
     }
 }
 
@@ -91,5 +89,81 @@ extension HomeViewController {
 extension HomeViewController {
     private func pushViewController(_ videoModel: VideoModel) {
         Logging("pushViewController")
+    }
+}
+
+// MARK:- UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.numberOfSections(collectionView: collectionView)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfItemsInSection(section: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let moduleType = viewModel.data[indexPath.section].first?.type
+        switch moduleType {
+        case "local":
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCyclePagerContainerCell.reuseIdentifier, for: indexPath) as! HomeCyclePagerContainerCell
+//            cell.delegate = self
+            Logging("cellForItemAt local")
+        case "swedish":
+            Logging("cellForItemAt swedish")
+        case "live":
+            Logging("cellForItemAt live")
+        case "vod":
+            Logging("cellForItemAt vod")
+        default:
+            Logging("Unknown type")
+        }
+        // temp
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCyclePagerContainerCell.reuseIdentifier, for: indexPath) as! HomeCyclePagerContainerCell
+        cell.dataModel = viewModel.data.first
+        cell.delegate = self
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        Logging("didSelectItemAt: \(indexPath)")
+    }
+    
+    // inner margin
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return viewModel.insetForSectionAt(section: section)
+    }
+    
+    // margin between items
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return viewModel.minimumInteritemSpacingForSectionAt(section: section)
+    }
+    
+    // minimum line margin
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return viewModel.minimumLineSpacingForSectionAt(section: section)
+    }
+    
+    // item size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return viewModel.sizeForItemAt(indexPath: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return viewModel.referenceSizeForHeaderInSection(section: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return viewModel.referenceSizeForFooterInSection(section: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return viewModel.viewForSupplementaryElementOfKind(kind: kind, indexPath: indexPath)
+    }
+}
+
+extension HomeViewController: HomeCyclePagerContainerCellDelegate {
+    func cyclePagerViewClick(videoModel: VideoModel) {
+        Logging("cyclePagerViewClick: \(videoModel.title ?? "N/A")")
     }
 }
