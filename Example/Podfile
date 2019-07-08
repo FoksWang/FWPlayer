@@ -30,6 +30,7 @@ target 'FWPlayer_Example' do
   # pod 'SKPhotoBrowser'
   # pod '1PasswordExtension'
   # pod 'SkeletonView'
+  # pod 'SwiftMessages'
 
   target 'FWPlayer_Tests' do
     inherit! :search_paths

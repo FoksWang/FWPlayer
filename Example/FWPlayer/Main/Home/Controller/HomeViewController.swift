@@ -25,7 +25,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.collectionViewLayout = UICollectionViewFlowLayout.init()
+            
             collectionView.register(HomeCyclePagerContainerCell.self, forCellWithReuseIdentifier: HomeCyclePagerContainerCell.reuseIdentifier)
+            collectionView.register(HomeVideoPortraitContainerCell.self, forCellWithReuseIdentifier: HomeVideoPortraitContainerCell.reuseIdentifier)
         }
     }
     
@@ -103,26 +105,21 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let moduleType = viewModel.data[indexPath.section].first?.type
-        switch moduleType {
-        case "local":
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCyclePagerContainerCell.reuseIdentifier, for: indexPath) as! HomeCyclePagerContainerCell
-//            cell.delegate = self
-            Logging("cellForItemAt local")
-        case "swedish":
-            Logging("cellForItemAt swedish")
-        case "live":
-            Logging("cellForItemAt live")
-        case "vod":
-            Logging("cellForItemAt vod")
-        default:
-            Logging("Unknown type")
+        let key = viewModel.homeVideoList.displayIndex[indexPath.section]
+        let moduleType = viewModel.homeVideoList.videos[key]?.first?.type
+        
+        if moduleType == "local" {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCyclePagerContainerCell.reuseIdentifier, for: indexPath) as! HomeCyclePagerContainerCell
+            cell.dataModel = viewModel.homeVideoList.videos[key]
+            cell.delegate = self
+            return cell
+            
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeVideoPortraitContainerCell.reuseIdentifier, for: indexPath) as! HomeVideoPortraitContainerCell
+            cell.dataModel = viewModel.homeVideoList.videos[key]
+            cell.delegate = self
+            return cell
         }
-        // temp
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCyclePagerContainerCell.reuseIdentifier, for: indexPath) as! HomeCyclePagerContainerCell
-        cell.dataModel = viewModel.data.first
-        cell.delegate = self
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -157,13 +154,19 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return viewModel.referenceSizeForFooterInSection(section: section)
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return viewModel.viewForSupplementaryElementOfKind(kind: kind, indexPath: indexPath)
-    }
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        return viewModel.viewForSupplementaryElementOfKind(kind: kind, indexPath: indexPath)
+//    }
 }
 
 extension HomeViewController: HomeCyclePagerContainerCellDelegate {
-    func cyclePagerViewClick(videoModel: VideoModel) {
-        Logging("cyclePagerViewClick: \(videoModel.title ?? "N/A")")
+    func didSelectedCyclePagerViewCell(videoModel: VideoModel) {
+        Logging("didSelectedCyclePagerViewCell: \(videoModel.title ?? "N/A")")
+    }
+}
+
+extension HomeViewController: HomeVideoPortraitContainerCellDelegate {
+    func didSelectedVideoPortraitCell(videoModel: VideoModel) {
+        Logging("didSelectedVideoPortraitCell: \(videoModel.title ?? "N/A")")
     }
 }

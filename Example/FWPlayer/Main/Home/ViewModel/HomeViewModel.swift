@@ -8,13 +8,15 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
+import HandyJSON
 
 class HomeViewModel: NSObject {
     
     // MARK - Data Model
-    var data = [[VideoModel]]()
-    lazy var cyclePagerData: [VideoModel] = {
-        var data = [VideoModel]()
+    var homeVideoList = HomeVideoList()
+    private lazy var localVideoList: [VideoModel] = {
+        var list = [VideoModel]()
         
         var video01 = VideoModel()
         video01.description = "Simba idolizes his father, King Mufasa, and takes to heart his own royal destiny on the plains of Africa. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother -- and former heir to the throne -- has plans of his own. The battle for Pride Rock is soon ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. Now, with help from a curious pair of newfound friends, Simba must figure out how to grow up and take back what is rightfully his."
@@ -44,12 +46,12 @@ class HomeViewModel: NSObject {
         video04.type = "local"
         video04.videoUrl = Bundle.main.path(forResource: "trailer_astra.mp4", ofType: nil)
         
-        data.append(video01)
-        data.append(video02)
-        data.append(video03)
-        data.append(video04)
+        list.append(video01)
+        list.append(video02)
+        list.append(video03)
+        list.append(video04)
         
-        return data
+        return list
     }()
     
     // Mark: - Data Source
@@ -60,8 +62,35 @@ class HomeViewModel: NSObject {
 // Mark: - Data Handling
 extension HomeViewModel {
     func loadData() {
-        data.removeAll()
-        data.append(cyclePagerData)
+        HomeVideosProvider.request(.getVideos) { (result) in
+            if case let .success(response) = result {
+                let data = try? response.mapJSON()
+                let json = JSON(data!)
+                if let mappedObject = JSONDeserializer<VideoListModel>.deserializeFrom(json: json.description) {
+                    
+                    if let swedishVideoList = JSONDeserializer<VideoModel>.deserializeModelArrayFrom(json: json["swedish"].description) {
+                        self.homeVideoList.videos["swedish"] = swedishVideoList as? [VideoModel]
+                    }
+                    
+                    if let liveVideoList = JSONDeserializer<VideoModel>.deserializeModelArrayFrom(json: json["live"].description) {
+                        self.homeVideoList.videos["live"] = liveVideoList as? [VideoModel]
+                    }
+                    
+                    if let vodVideoList = JSONDeserializer<VideoModel>.deserializeModelArrayFrom(json: json["vod"].description) {
+                        self.homeVideoList.videos["vod"] = vodVideoList as? [VideoModel]
+                    }
+                    
+                    if let mediaVideoList = JSONDeserializer<VideoModel>.deserializeModelArrayFrom(json: json["media"].description) {
+                        self.homeVideoList.videos["media"] = mediaVideoList as? [VideoModel]
+                    }
+                    
+                    self.updateDataBlock?()
+                }
+            }
+        }
+        
+        homeVideoList.videos.removeAll()
+        homeVideoList.videos["local"] = localVideoList
         self.updateDataBlock?()
     }
 }
@@ -69,7 +98,7 @@ extension HomeViewModel {
 // MARK:- UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate
 extension HomeViewModel {
     func numberOfSections(collectionView: UICollectionView) -> Int {
-        return data.count
+        return homeVideoList.videos.count
     }
     
     func numberOfItemsInSection(section: Int) -> Int {
@@ -89,16 +118,18 @@ extension HomeViewModel {
     }
     
     func sizeForItemAt(indexPath: IndexPath) -> CGSize {
-        let moduleType = data[indexPath.section].first?.type
+        let key = homeVideoList.displayIndex[indexPath.section]
+        let moduleType = homeVideoList.videos[key]?.first?.type
         if moduleType == "local" {
             return CGSize(width: fwScreenWidth, height: fwScreenWidth * 9 / 16)
         } else {
-            return CGSize(width: 133, height: 200)
+            return CGSize(width: fwScreenWidth, height: 200)
         }
     }
     
     func referenceSizeForHeaderInSection(section: Int) -> CGSize {
-        let moduleType = data[section].first?.type
+        let key = homeVideoList.displayIndex[section]
+        let moduleType = homeVideoList.videos[key]?.first?.type
         if moduleType == "local" {
             return CGSize.zero
         } else {
@@ -111,7 +142,8 @@ extension HomeViewModel {
     }
     
     func viewForSupplementaryElementOfKind(kind: String, indexPath: IndexPath) -> UICollectionReusableView {
-        let moduleType = data[indexPath.section].first?.type
+        let key = homeVideoList.displayIndex[indexPath.section]
+        let moduleType = homeVideoList.videos[key]?.first?.type
         if kind == UICollectionView.elementKindSectionHeader {
             
         } else if kind == UICollectionView.elementKindSectionFooter {

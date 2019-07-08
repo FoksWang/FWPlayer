@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2820A5D96D22577B4DC60441 /* Pods_FWPlayer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBB0E4C331B6989C3E332C6 /* Pods_FWPlayer_Tests.framework */; };
 		352E4ABC22D235900001015F /* HomeCyclePagerContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ABB22D235900001015F /* HomeCyclePagerContainerCell.swift */; };
+		352E4ABE22D290F20001015F /* HomeVideoPortraitContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ABD22D290F20001015F /* HomeVideoPortraitContainerCell.swift */; };
+		352E4AC022D29BA50001015F /* HomeVideosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ABF22D29BA50001015F /* HomeVideosAPI.swift */; };
 		35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */; };
 		35E7AEDF22CE2D0F00A7FE26 /* ContentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */; };
 		35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */; };
@@ -53,6 +55,8 @@
 		0D359AB553AA1483F2094C3E /* Pods_FWPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADD2BD5E860A660A40E9681 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		352E4ABB22D235900001015F /* HomeCyclePagerContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCyclePagerContainerCell.swift; sourceTree = "<group>"; };
+		352E4ABD22D290F20001015F /* HomeVideoPortraitContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoPortraitContainerCell.swift; sourceTree = "<group>"; };
+		352E4ABF22D29BA50001015F /* HomeVideosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideosAPI.swift; sourceTree = "<group>"; };
 		35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentNavigationController.swift; sourceTree = "<group>"; };
 		35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				35E7AF1C22D1430000A7FE26 /* HomeCyclePagerViewCell.xib */,
 				35E7AF2322D14C3E00A7FE26 /* HomeVideoPortraitCell.swift */,
 				35E7AF2422D14C3F00A7FE26 /* HomeVideoPortraitCell.xib */,
+				352E4ABD22D290F20001015F /* HomeVideoPortraitContainerCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 		35E7AEC422CD796F00A7FE26 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				352E4ABF22D29BA50001015F /* HomeVideosAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -605,7 +611,9 @@
 				35E7AEFE22CF72A900A7FE26 /* UIImageExtension.swift in Sources */,
 				35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */,
 				35E7AEE522CE3ECD00A7FE26 /* AboutViewController.swift in Sources */,
+				352E4AC022D29BA50001015F /* HomeVideosAPI.swift in Sources */,
 				35E7AEFB22CECE3500A7FE26 /* SideMenuTableViewCell.swift in Sources */,
+				352E4ABE22D290F20001015F /* HomeVideoPortraitContainerCell.swift in Sources */,
 				35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */,
 				35E7AF1422D0E06600A7FE26 /* VideoModel.swift in Sources */,
 			);
@@ -764,7 +772,10 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "$(inherited) COCOAPODS=1";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
 				INFOPLIST_FILE = FWPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

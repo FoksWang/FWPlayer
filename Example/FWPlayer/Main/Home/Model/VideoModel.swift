@@ -8,6 +8,20 @@
 
 import HandyJSON
 
+// outer app model
+struct HomeVideoList {
+    var videos = [String: [VideoModel]]()
+    var displayIndex = ["local", "swedish", "live", "vod", "media"]
+}
+
+// inner http model
+struct VideoListModel: HandyJSON {
+    var swedish: [VideoModel]?
+    var live: [VideoModel]?
+    var vod: [VideoModel]?
+    var media: [VideoModel]?
+}
+
 struct VideoModel: HandyJSON {
     var description: String?
     var imageUrl: String?
