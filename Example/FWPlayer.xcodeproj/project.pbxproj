@@ -11,6 +11,9 @@
 		352E4ABC22D235900001015F /* HomeCyclePagerContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ABB22D235900001015F /* HomeCyclePagerContainerCell.swift */; };
 		352E4ABE22D290F20001015F /* HomeVideoPortraitContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ABD22D290F20001015F /* HomeVideoPortraitContainerCell.swift */; };
 		352E4AC022D29BA50001015F /* HomeVideosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ABF22D29BA50001015F /* HomeVideosAPI.swift */; };
+		352E4AC222D381A40001015F /* HomeVideosHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4AC122D381A40001015F /* HomeVideosHeaderView.swift */; };
+		352E4AC422D38FB20001015F /* HomeVideosFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4AC322D38FB20001015F /* HomeVideosFooterView.swift */; };
+		352E4AC622D3A5C60001015F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4AC522D3A5C60001015F /* UIViewControllerExtension.swift */; };
 		35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */; };
 		35E7AEDF22CE2D0F00A7FE26 /* ContentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */; };
 		35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */; };
@@ -57,6 +60,9 @@
 		352E4ABB22D235900001015F /* HomeCyclePagerContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCyclePagerContainerCell.swift; sourceTree = "<group>"; };
 		352E4ABD22D290F20001015F /* HomeVideoPortraitContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoPortraitContainerCell.swift; sourceTree = "<group>"; };
 		352E4ABF22D29BA50001015F /* HomeVideosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideosAPI.swift; sourceTree = "<group>"; };
+		352E4AC122D381A40001015F /* HomeVideosHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideosHeaderView.swift; sourceTree = "<group>"; };
+		352E4AC322D38FB20001015F /* HomeVideosFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideosFooterView.swift; sourceTree = "<group>"; };
+		352E4AC522D3A5C60001015F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentNavigationController.swift; sourceTree = "<group>"; };
 		35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 			children = (
 				35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */,
 				35E7AEFD22CF72A900A7FE26 /* UIImageExtension.swift */,
+				352E4AC522D3A5C60001015F /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -192,6 +199,8 @@
 				35E7AF2322D14C3E00A7FE26 /* HomeVideoPortraitCell.swift */,
 				35E7AF2422D14C3F00A7FE26 /* HomeVideoPortraitCell.xib */,
 				352E4ABD22D290F20001015F /* HomeVideoPortraitContainerCell.swift */,
+				352E4AC322D38FB20001015F /* HomeVideosFooterView.swift */,
+				352E4AC122D381A40001015F /* HomeVideosHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -562,6 +571,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenuSwift/SideMenuSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyColor/SwiftyColor.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TYCyclePagerView/TYCyclePagerView.framework",
@@ -583,6 +593,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYCyclePagerView.framework",
@@ -602,6 +613,7 @@
 			files = (
 				35E7AEF822CEC4FB00A7FE26 /* Common.swift in Sources */,
 				35E7AF0322CFE76400A7FE26 /* HomeViewModel.swift in Sources */,
+				352E4AC422D38FB20001015F /* HomeVideosFooterView.swift in Sources */,
 				35E7AF1D22D1430000A7FE26 /* HomeCyclePagerViewCell.swift in Sources */,
 				35E7AF3322D1F5AB00A7FE26 /* FWScrollView.swift in Sources */,
 				35E7AF2522D14C3F00A7FE26 /* HomeVideoPortraitCell.swift in Sources */,
@@ -611,9 +623,11 @@
 				35E7AEFE22CF72A900A7FE26 /* UIImageExtension.swift in Sources */,
 				35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */,
 				35E7AEE522CE3ECD00A7FE26 /* AboutViewController.swift in Sources */,
+				352E4AC222D381A40001015F /* HomeVideosHeaderView.swift in Sources */,
 				352E4AC022D29BA50001015F /* HomeVideosAPI.swift in Sources */,
 				35E7AEFB22CECE3500A7FE26 /* SideMenuTableViewCell.swift in Sources */,
 				352E4ABE22D290F20001015F /* HomeVideoPortraitContainerCell.swift in Sources */,
+				352E4AC622D3A5C60001015F /* UIViewControllerExtension.swift in Sources */,
 				35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */,
 				35E7AF1422D0E06600A7FE26 /* VideoModel.swift in Sources */,
 			);

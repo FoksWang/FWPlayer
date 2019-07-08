@@ -24,13 +24,13 @@ target 'FWPlayer_Example' do
   
   pod 'TYCyclePagerView'
   pod 'SwiftyColor'
+  pod 'SwiftMessages'
   
   # pod 'MJRefresh'
   # pod 'TYPagerController'
   # pod 'SKPhotoBrowser'
   # pod '1PasswordExtension'
   # pod 'SkeletonView'
-  # pod 'SwiftMessages'
 
   target 'FWPlayer_Tests' do
     inherit! :search_paths

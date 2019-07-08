@@ -21,6 +21,9 @@ PODS:
   - RxSwift (5.0.0)
   - SideMenuSwift (2.0.1)
   - SnapKit (5.0.0)
+  - SwiftMessages (7.0.0):
+    - SwiftMessages/App (= 7.0.0)
+  - SwiftMessages/App (7.0.0)
   - SwiftyColor (1.2.0)
   - SwiftyJSON (5.0.0)
   - Then (2.5.0)
@@ -39,6 +42,7 @@ DEPENDENCIES:
   - RxSwift
   - SideMenuSwift
   - SnapKit
+  - SwiftMessages
   - SwiftyColor
   - SwiftyJSON
   - Then
@@ -59,6 +63,7 @@ SPEC REPOS:
     - RxSwift
     - SideMenuSwift
     - SnapKit
+    - SwiftMessages
     - SwiftyColor
     - SwiftyJSON
     - Then
@@ -83,11 +88,12 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SideMenuSwift: 588374781f2508f551a41796482290aeff1afd78
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SwiftMessages: a952f7a9103d9aeab93730a2861d2d8fcdd8758f
   SwiftyColor: ac23e6c0b561838c1ef0f554ff170cceba14546b
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
   TYCyclePagerView: 2b051dade0615c70784aa34f40c646feeddb7344
 
-PODFILE CHECKSUM: e85e64736f6d01f08dce073c07e14e8bd405da9c
+PODFILE CHECKSUM: e6cf34b1153a8a518d033812ca50f86e179eb77c
 
 COCOAPODS: 1.7.2

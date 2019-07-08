@@ -12,6 +12,8 @@ import UIKit
 let fwScreenWidth = UIScreen.main.bounds.size.width
 let fwScreenHeight = UIScreen.main.bounds.size.height
 
+let notificationNameShowMessage = Notification.Name("notificationNameShowMessage")
+
 func Logging<T>(_ message : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
     #if DEBUG
     let fileName = (file as NSString).lastPathComponent

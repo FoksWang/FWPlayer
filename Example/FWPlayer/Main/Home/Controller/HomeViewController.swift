@@ -26,6 +26,11 @@ class HomeViewController: UIViewController {
         didSet {
             collectionView.collectionViewLayout = UICollectionViewFlowLayout.init()
             
+            // register header view and footer view
+            collectionView.register(HomeVideosHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeVideosHeaderView.reuseIdentifier)
+            collectionView.register(HomeVideosFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeVideosFooterView.reuseIdentifier)
+            
+            // register cells
             collectionView.register(HomeCyclePagerContainerCell.self, forCellWithReuseIdentifier: HomeCyclePagerContainerCell.reuseIdentifier)
             collectionView.register(HomeVideoPortraitContainerCell.self, forCellWithReuseIdentifier: HomeVideoPortraitContainerCell.reuseIdentifier)
         }
@@ -74,6 +79,7 @@ extension HomeViewController {
     private func setupUI() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+        self.setupShowMessage()
     }
 }
 
@@ -154,9 +160,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return viewModel.referenceSizeForFooterInSection(section: section)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        return viewModel.viewForSupplementaryElementOfKind(kind: kind, indexPath: indexPath)
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return viewModel.viewForSupplementaryElementOfKind(collectionView, kind: kind, indexPath: indexPath)
+    }
 }
 
 extension HomeViewController: HomeCyclePagerContainerCellDelegate {

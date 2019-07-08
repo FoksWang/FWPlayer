@@ -66,7 +66,10 @@ extension HomeViewModel {
             if case let .success(response) = result {
                 let data = try? response.mapJSON()
                 let json = JSON(data!)
-                if let mappedObject = JSONDeserializer<VideoListModel>.deserializeFrom(json: json.description) {
+                if let _ = JSONDeserializer<VideoListModel>.deserializeFrom(json: json.description) {
+                    
+                    self.homeVideoList.videos.removeAll()
+                    self.homeVideoList.videos["local"] = self.localVideoList
                     
                     if let swedishVideoList = JSONDeserializer<VideoModel>.deserializeModelArrayFrom(json: json["swedish"].description) {
                         self.homeVideoList.videos["swedish"] = swedishVideoList as? [VideoModel]
@@ -88,10 +91,6 @@ extension HomeViewModel {
                 }
             }
         }
-        
-        homeVideoList.videos.removeAll()
-        homeVideoList.videos["local"] = localVideoList
-        self.updateDataBlock?()
     }
 }
 
@@ -133,7 +132,7 @@ extension HomeViewModel {
         if moduleType == "local" {
             return CGSize.zero
         } else {
-            return CGSize(width: fwScreenWidth, height: 40)
+            return CGSize(width: fwScreenWidth, height: 55)
         }
     }
     
@@ -141,13 +140,23 @@ extension HomeViewModel {
         return CGSize.zero
     }
     
-    func viewForSupplementaryElementOfKind(kind: String, indexPath: IndexPath) -> UICollectionReusableView {
+    func viewForSupplementaryElementOfKind(_ collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView {
         let key = homeVideoList.displayIndex[indexPath.section]
-        let moduleType = homeVideoList.videos[key]?.first?.type
+//        let moduleType = homeVideoList.videos[key]?.first?.type
         if kind == UICollectionView.elementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeVideosHeaderView.reuseIdentifier, for: indexPath) as! HomeVideosHeaderView
+            headerView.videoList = homeVideoList.videos[key]
+            headerView.headerViewClick = { (videoList) in
+                NotificationCenter.default.post(name: notificationNameShowMessage, object: "No such function at the moment")
+            }
+            return headerView
             
         } else if kind == UICollectionView.elementKindSectionFooter {
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeVideosFooterView.reuseIdentifier, for: indexPath) as! HomeVideosFooterView
+            return footerView
+            
+        } else {
+            return UICollectionReusableView()
         }
-        return UICollectionReusableView()
     }
 }

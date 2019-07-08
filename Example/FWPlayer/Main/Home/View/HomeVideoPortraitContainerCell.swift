@@ -25,17 +25,19 @@ class HomeVideoPortraitContainerCell: UICollectionViewCell {
     private lazy var layout = UICollectionViewFlowLayout.init().then {
         $0.scrollDirection = .horizontal
     }
-    
+
     private lazy var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout).then {
         $0.delegate = self
         $0.dataSource = self
         $0.backgroundColor = .white
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
-//        $0.alwaysBounceHorizontal = true
-        
+//        $0.contentInsetAdjustmentBehavior = .never
+
         $0.register(UINib(nibName: HomeVideoPortraitCell.className, bundle: nil), forCellWithReuseIdentifier: HomeVideoPortraitCell.reuseIdentifier)
     }
+    
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,6 +78,14 @@ extension HomeVideoPortraitContainerCell: UICollectionViewDelegate, UICollection
         let url = URL(string: data[indexPath.row].imageUrl!)
         let image = UIImage(named: "image_placeholder_portrait")
         cell.posterImageView.kf.setImage(with: url, placeholder: image)
+        
+        if  data[indexPath.row].type == "swedish" {
+            cell.badgeView.isHidden = false
+            cell.badgeLabel.text = "Live"
+        } else {
+            cell.badgeView.isHidden = true
+        }
+        
         return cell
     }
     
@@ -85,7 +95,7 @@ extension HomeVideoPortraitContainerCell: UICollectionViewDelegate, UICollection
     
     // inner margin
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     // margin between items
@@ -103,4 +113,3 @@ extension HomeVideoPortraitContainerCell: UICollectionViewDelegate, UICollection
         return CGSize(width: 133, height: 200)
     }
 }
-
