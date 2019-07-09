@@ -17,44 +17,12 @@
                         <viewControllerLayoutGuide type="top" id="HTd-jf-f6U"/>
                         <viewControllerLayoutGuide type="bottom" id="RnH-ww-Juj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="HDz-kW-Jtm">
+                    <view key="view" contentMode="scaleToFill" id="HDz-kW-Jtm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSw-DD-BYZ" customClass="FWScrollView" customModule="FWPlayer_Example" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jt5-YU-UI7" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="604"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mgo-Zg-cZb" userLabel="CyclePagerContainer">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Mgo-Zg-cZb" secondAttribute="height" multiplier="16:9" id="OJW-WC-1n9"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Mgo-Zg-cZb" firstAttribute="leading" secondItem="Jt5-YU-UI7" secondAttribute="leading" id="246-MD-qo1"/>
-                                            <constraint firstItem="Mgo-Zg-cZb" firstAttribute="top" secondItem="Jt5-YU-UI7" secondAttribute="top" id="CTy-mf-kUU"/>
-                                            <constraint firstAttribute="trailing" secondItem="Mgo-Zg-cZb" secondAttribute="trailing" id="oIj-c6-xtj"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Jt5-YU-UI7" firstAttribute="width" secondItem="eSw-DD-BYZ" secondAttribute="width" id="4bV-89-J9p"/>
-                                    <constraint firstItem="Jt5-YU-UI7" firstAttribute="leading" secondItem="eSw-DD-BYZ" secondAttribute="leading" id="P1X-XG-rx5"/>
-                                    <constraint firstItem="Jt5-YU-UI7" firstAttribute="top" secondItem="eSw-DD-BYZ" secondAttribute="top" id="SeU-My-VRm"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jt5-YU-UI7" secondAttribute="trailing" id="bVF-et-NeM"/>
-                                    <constraint firstAttribute="bottom" secondItem="Jt5-YU-UI7" secondAttribute="bottom" id="did-XB-JFV"/>
-                                    <constraint firstItem="Jt5-YU-UI7" firstAttribute="height" secondItem="eSw-DD-BYZ" secondAttribute="height" constant="100" id="wVk-ha-51p"/>
-                                </constraints>
-                            </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hi2-xN-sIp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="530"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ha4-aW-tO8">
                                     <size key="itemSize" width="50" height="50"/>
@@ -71,20 +39,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="eSw-DD-BYZ" firstAttribute="top" secondItem="HTd-jf-f6U" secondAttribute="bottom" id="9UZ-oi-BeN"/>
                             <constraint firstAttribute="trailing" secondItem="Hi2-xN-sIp" secondAttribute="trailing" id="Bvc-C0-9IT"/>
                             <constraint firstItem="Hi2-xN-sIp" firstAttribute="top" secondItem="HTd-jf-f6U" secondAttribute="bottom" id="HCI-BP-f3P"/>
-                            <constraint firstItem="eSw-DD-BYZ" firstAttribute="leading" secondItem="HDz-kW-Jtm" secondAttribute="leading" id="OsM-SN-Qf0"/>
-                            <constraint firstItem="RnH-ww-Juj" firstAttribute="top" secondItem="eSw-DD-BYZ" secondAttribute="bottom" id="lRq-Hl-OSH"/>
                             <constraint firstItem="RnH-ww-Juj" firstAttribute="top" secondItem="Hi2-xN-sIp" secondAttribute="bottom" id="pCB-MW-9AB"/>
                             <constraint firstItem="Hi2-xN-sIp" firstAttribute="leading" secondItem="HDz-kW-Jtm" secondAttribute="leading" id="qNs-n6-RKs"/>
-                            <constraint firstAttribute="trailing" secondItem="eSw-DD-BYZ" secondAttribute="trailing" id="v8v-jw-h18"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="eSw-DD-BYZ"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Demo" id="fKc-He-ilg">
                         <barButtonItem key="backBarButtonItem" title=" " id="oQe-35-DMC"/>

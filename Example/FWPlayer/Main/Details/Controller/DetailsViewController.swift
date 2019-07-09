@@ -19,10 +19,9 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib(nibName: DetailsPlayerCell.className, bundle: nil), forCellReuseIdentifier: DetailsPlayerCell.reuseIdentifier)
-            tableView.register(UINib(nibName: DetailsVideoLandscapeCell.className, bundle: nil), forCellReuseIdentifier: DetailsVideoLandscapeCell.reuseIdentifier)
             tableView.separatorStyle = .none
-            tableView.fw_scrollViewDidStopScrollCallback = { [weak self] indexPath in
-                guard let self = self else { return }
+            
+            tableView.fw_scrollViewDidStopScrollCallback = { [unowned self] indexPath in
                 if self.player?.playingIndexPath == nil {
                     self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
                 }
@@ -128,22 +127,20 @@ extension DetailsViewController {
             $0.controlView = playerControlView
             // Allow autoplay on mobile networks
             $0.isWWANAutoPlay = true
-            // Autoplay
-            $0.shouldAutoPlay = false
+            // Autoplay is smallFloatView
+            $0.shouldAutoPlay = true
             // 1.0 means: when completely disappeared
             $0.playerDisapperaPercent = 1.0
             // 0.0 means: At the beginning of the display
             $0.playerApperaPercent = 0.0
             
-            $0.orientationWillChange = { [weak self] (player, isFullScreen) in
-                guard let self = self else { return }
+            $0.orientationWillChange = { [unowned self] (player, isFullScreen) in
                 self.setNeedsStatusBarAppearanceUpdate()
                 UIViewController.attemptRotationToDeviceOrientation()
                 self.tableView.scrollsToTop = !isFullScreen
             }
             
-            $0.playerDidToEnd = { [weak self] asset in
-                guard let self = self else { return }
+            $0.playerDidToEnd = { [unowned self] asset in
                 self.playerControlView.resetControlView()
                 self.player?.stopCurrentPlayingCell()
             }
@@ -162,8 +159,8 @@ extension DetailsViewController {
     
     /// play the video
     private func playTheVideoAtIndexPath(indexPath: IndexPath, scrollToTop: Bool) {
+        self.player?.stopCurrentPlayingCell()
         self.player?.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
-//        let layout: FWTableViewCellLayout =
         let videoModel = viewModel.videoList[indexPath.row]
         let image = UIImage(named: "image_placeholder_landscape")
         self.playerControlView.showTitle(videoModel.title, cover: image, fullScreenMode: .landscape)
@@ -174,25 +171,19 @@ extension DetailsViewController {
 // MARK:- Setup data
 extension DetailsViewController {
     private func setupData() {
-        var videoUrls = [URL]()
-        for videoModel in viewModel.videoList {
-            if videoModel.type == "local" {
-                videoUrls.append(URL(fileURLWithPath: videoModel.videoUrl!))
-            } else {
-                videoUrls.append(URL(string: videoModel.videoUrl!)!)
+        viewModel.updateDataBlock = { [unowned self] (videoUrls) in
+            self.player?.assetURLs = videoUrls
+            self.tableView.reloadData()
+            self.tableView.fw_filterShouldPlayCellWhileScrolled { [unowned self] (indexPath) in
+                self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
             }
         }
-        self.player?.assetURLs = videoUrls
-        self.tableView.reloadData()
-        self.tableView.fw_filterShouldPlayCellWhileScrolled { [weak self] (indexPath) in
-            guard let self = self else { return }
-            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-        }
+        viewModel.loadData()
     }
 }
 
-// MARK:- UIScrollViewDelegate,for smallFloatView
-extension DetailsViewController: UIScrollViewDelegate {
+// MARK:- To enable smallFloatView must implement UIScrollViewDelegate
+extension DetailsViewController {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollView.fw_scrollViewDidEndDecelerating()
     }
@@ -217,28 +208,18 @@ extension DetailsViewController: UIScrollViewDelegate {
  // MARK:- UITableViewDelegate, UITableViewDataSource
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.videoList.count
+        return viewModel.numberOfRowsInSection(section: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 { // top cell
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailsPlayerCell.reuseIdentifier, for: indexPath) as! DetailsPlayerCell
             cell.delegate = self
+            cell.indexPath = indexPath
             return cell
-            
-        } else { // bottom cells
-            let cell = tableView.dequeueReusableCell(withIdentifier: DetailsVideoLandscapeCell.reuseIdentifier, for: indexPath) as! DetailsVideoLandscapeCell
-            cell.delegate = self
-            return cell
-        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 { // top cell
-            return 650
-        } else {
-            return 400
-        }
+        return viewModel.heightForRowAt(indexPath: indexPath)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -250,13 +231,4 @@ extension DetailsViewController: DetailsPlayerCellDelegate {
         Logging("playVideoAtDetailsPlayerCell click: \(indexPath)")
         self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
     }
-    
-}
-
-extension DetailsViewController: DetailsVideoLandscapeCellDelegate {
-    func playVideoAtDetailsVideoLandscapeCell(indexPath: IndexPath) {
-        Logging("playVideoAtDetailsVideoLandscapeCell click: \(indexPath)")
-        self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-    }
-    
 }

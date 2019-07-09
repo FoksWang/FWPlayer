@@ -18,8 +18,6 @@
 		352E4ACE22D3CE020001015F /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ACD22D3CE020001015F /* DetailsViewModel.swift */; };
 		352E4ADF22D3D5780001015F /* DetailsPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ADD22D3D5780001015F /* DetailsPlayerCell.swift */; };
 		352E4AE022D3D5780001015F /* DetailsPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 352E4ADE22D3D5780001015F /* DetailsPlayerCell.xib */; };
-		352E4AE322D3D59A0001015F /* DetailsVideoLandscapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4AE122D3D59A0001015F /* DetailsVideoLandscapeCell.swift */; };
-		352E4AE422D3D59A0001015F /* DetailsVideoLandscapeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 352E4AE222D3D59A0001015F /* DetailsVideoLandscapeCell.xib */; };
 		35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */; };
 		35E7AEDF22CE2D0F00A7FE26 /* ContentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */; };
 		35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */; };
@@ -73,8 +71,6 @@
 		352E4ACD22D3CE020001015F /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		352E4ADD22D3D5780001015F /* DetailsPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPlayerCell.swift; sourceTree = "<group>"; };
 		352E4ADE22D3D5780001015F /* DetailsPlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsPlayerCell.xib; sourceTree = "<group>"; };
-		352E4AE122D3D59A0001015F /* DetailsVideoLandscapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVideoLandscapeCell.swift; sourceTree = "<group>"; };
-		352E4AE222D3D59A0001015F /* DetailsVideoLandscapeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsVideoLandscapeCell.xib; sourceTree = "<group>"; };
 		35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentNavigationController.swift; sourceTree = "<group>"; };
 		35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -166,8 +162,6 @@
 			children = (
 				352E4ADD22D3D5780001015F /* DetailsPlayerCell.swift */,
 				352E4ADE22D3D5780001015F /* DetailsPlayerCell.xib */,
-				352E4AE122D3D59A0001015F /* DetailsVideoLandscapeCell.swift */,
-				352E4AE222D3D59A0001015F /* DetailsVideoLandscapeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -542,7 +536,6 @@
 				352E4AE022D3D5780001015F /* DetailsPlayerCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				352E4AE422D3D59A0001015F /* DetailsVideoLandscapeCell.xib in Resources */,
 				35E7AF0D22D0D13300A7FE26 /* trailer_birds.mp4 in Resources */,
 				35E7AF0C22D0D13300A7FE26 /* trailer_lion.mp4 in Resources */,
 			);
@@ -684,7 +677,6 @@
 				352E4AC622D3A5C60001015F /* UIViewControllerExtension.swift in Sources */,
 				35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */,
 				35E7AF1422D0E06600A7FE26 /* VideoModel.swift in Sources */,
-				352E4AE322D3D59A0001015F /* DetailsVideoLandscapeCell.swift in Sources */,
 				352E4ACC22D3CD940001015F /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
