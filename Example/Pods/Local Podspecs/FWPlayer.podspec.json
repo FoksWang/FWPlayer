@@ -1,6 +1,6 @@
 {
   "name": "FWPlayer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "summary": "A video player SDK for iOS.",
   "swift_versions": "5.0",
   "description": "For more information, please see README.",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/FoksWang/FWPlayer.git",
-    "tag": "1.0.3"
+    "tag": "1.0.4"
   },
   "platforms": {
     "ios": "9.0"
