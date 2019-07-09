@@ -184,5 +184,9 @@ extension HomeViewController: HomeVideoPortraitContainerCellDelegate {
     func didSelectedVideoPortraitCell(currentIndex: Int, videoList: [VideoModel]) {
         Logging("didSelectedVideoPortraitCell: \(videoList[currentIndex].title ?? "N/A")")
         let viewModel = DetailsViewModel(currentIndex: currentIndex, videoList: videoList)
+        let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "DetailsNavigationController") as! UINavigationController
+        let viewController = navigationController.topViewController as! DetailsViewController
+        viewController.viewModel = viewModel
+        self.present(navigationController, animated: true, completion: nil)
     }
 }

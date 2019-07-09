@@ -9,16 +9,20 @@
 import UIKit
 
 protocol DetailsPlayerCellDelegate: NSObjectProtocol {
-    func playVideoAtDetailsPlayerCell(currentIndex: Int)
+    func playVideoAtDetailsPlayerCell(indexPath: IndexPath)
 }
 
 class DetailsPlayerCell: UITableViewCell {
     
+    @IBAction func playButtonClick(_ sender: UIButton) {
+        self.delegate?.playVideoAtDetailsPlayerCell(indexPath: indexPath)
+    }
     
     static let className = "DetailsPlayerCell"
     static let reuseIdentifier = className
     
     weak var delegate: DetailsPlayerCellDelegate?
+    var indexPath = IndexPath(row: 0, section: 0)
 
     override func awakeFromNib() {
         super.awakeFromNib()

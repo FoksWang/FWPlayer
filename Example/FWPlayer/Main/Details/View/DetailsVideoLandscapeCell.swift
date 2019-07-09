@@ -9,15 +9,20 @@
 import UIKit
 
 protocol DetailsVideoLandscapeCellDelegate: NSObjectProtocol {
-    func playVideoAtDetailsVideoLandscapeCell(currentIndex: Int)
+    func playVideoAtDetailsVideoLandscapeCell(indexPath: IndexPath)
 }
 
 class DetailsVideoLandscapeCell: UITableViewCell {
+    
+    @IBAction func playButtonClick(_ sender: UIButton) {
+        self.delegate?.playVideoAtDetailsVideoLandscapeCell(indexPath: indexPath)
+    }
     
     static let className = "DetailsVideoLandscapeCell"
     static let reuseIdentifier = className
     
     weak var delegate: DetailsVideoLandscapeCellDelegate?
+    var indexPath = IndexPath(row: 0, section: 0)
 
     override func awakeFromNib() {
         super.awakeFromNib()

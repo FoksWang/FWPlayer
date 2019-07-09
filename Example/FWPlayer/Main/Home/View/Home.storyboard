@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="HTd-jf-f6U"/>
                         <viewControllerLayoutGuide type="bottom" id="RnH-ww-Juj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HDz-kW-Jtm">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="HDz-kW-Jtm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -54,7 +54,7 @@
                                 </constraints>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hi2-xN-sIp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="530"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ha4-aW-tO8">
                                     <size key="itemSize" width="50" height="50"/>
