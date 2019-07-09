@@ -21,11 +21,16 @@
 
 
 /**
- Enable media cache, default is off.
+ Enable media cache, default is NO.
  
  Without changing AVPlayer API, audio and video are cached and downloaded in segments, especially suitable for short videos.
  */
 @property (nonatomic, assign) BOOL isEnableMediaCache;
+
+/**
+ Allow play sound even the iPhone mute switch off, default is YES.
+ */
+@property (nonatomic, assign) BOOL isPlaySoundInSilentMode;
 
 - (NSString *)getVersionNumber;
 - (NSString *)getBuildNumber;
