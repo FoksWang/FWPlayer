@@ -55,7 +55,19 @@ class HomeViewController: UIViewController {
         }).disposed(by: rx.disposeBag)
     }
     
-    private lazy var rightBarButton = UIButton(type: .custom).then {
+    private lazy var castBarButton = UIButton(type: .custom).then {
+        let itemSize = 20
+        let image = UIImage(named: "cast_dark")
+        $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
+        $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
+        $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        $0.rx.tap.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            NotificationCenter.default.post(name: notificationNameShowMessage, object: "No such function at the moment")
+        }).disposed(by: rx.disposeBag)
+    }
+    
+    private lazy var searchBarButton = UIButton(type: .custom).then {
         let itemSize = 20
         let image = UIImage(named: "search_dark")
         $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
@@ -63,7 +75,7 @@ class HomeViewController: UIViewController {
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         $0.rx.tap.subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
-            Logging("rightBarButton click")
+            NotificationCenter.default.post(name: notificationNameShowMessage, object: "No such function at the moment")
         }).disposed(by: rx.disposeBag)
     }
     
@@ -78,7 +90,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     private func setupUI() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: castBarButton), UIBarButtonItem(customView: searchBarButton)]
         self.setupShowMessage()
     }
 }
@@ -90,13 +102,6 @@ extension HomeViewController {
             self.collectionView.reloadData()
         }
         viewModel.loadData()
-    }
-}
-
-// MARK:- Navigation
-extension HomeViewController {
-    private func pushViewController(_ videoModel: VideoModel) {
-        Logging("pushViewController")
     }
 }
 
@@ -129,7 +134,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Logging("didSelectItemAt: \(indexPath)")
     }
     
     // inner margin
@@ -166,13 +170,19 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
 }
 
 extension HomeViewController: HomeCyclePagerContainerCellDelegate {
-    func didSelectedCyclePagerViewCell(videoModel: VideoModel) {
-        Logging("didSelectedCyclePagerViewCell: \(videoModel.title ?? "N/A")")
+    func didSelectedCyclePagerViewCell(currentIndex: Int, videoList: [VideoModel]) {
+        Logging("didSelectedCyclePagerViewCell: \(videoList[currentIndex].title ?? "N/A")")
+        let viewModel = DetailsViewModel(currentIndex: currentIndex, videoList: videoList)
+        let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "DetailsNavigationController") as! UINavigationController
+        let viewController = navigationController.topViewController as! DetailsViewController
+        viewController.viewModel = viewModel
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 
 extension HomeViewController: HomeVideoPortraitContainerCellDelegate {
-    func didSelectedVideoPortraitCell(videoModel: VideoModel) {
-        Logging("didSelectedVideoPortraitCell: \(videoModel.title ?? "N/A")")
+    func didSelectedVideoPortraitCell(currentIndex: Int, videoList: [VideoModel]) {
+        Logging("didSelectedVideoPortraitCell: \(videoList[currentIndex].title ?? "N/A")")
+        let viewModel = DetailsViewModel(currentIndex: currentIndex, videoList: videoList)
     }
 }

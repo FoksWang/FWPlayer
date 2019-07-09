@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 import HandyJSON
 
-class HomeViewModel: NSObject {
+class HomeViewModel {
     
     // MARK - Data Model
     var homeVideoList = HomeVideoList()

@@ -12,7 +12,7 @@ import Then
 import SnapKit
 
 protocol HomeCyclePagerContainerCellDelegate: NSObjectProtocol {
-    func didSelectedCyclePagerViewCell(videoModel: VideoModel)
+    func didSelectedCyclePagerViewCell(currentIndex: Int, videoList: [VideoModel])
 }
 
 class HomeCyclePagerContainerCell: UICollectionViewCell {
@@ -98,7 +98,7 @@ extension HomeCyclePagerContainerCell: TYCyclePagerViewDelegate, TYCyclePagerVie
     }
     
     func pagerView(_ pageView: TYCyclePagerView, didSelectedItemCell cell: UICollectionViewCell, at index: Int) {
-        self.delegate?.didSelectedCyclePagerViewCell(videoModel: data[index])
+        self.delegate?.didSelectedCyclePagerViewCell(currentIndex: index, videoList: data)
     }
 }
 

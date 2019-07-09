@@ -13,7 +13,7 @@ import NSObject_Rx
 import SwiftMessages
 
 // MARK:- NotificationCenter
-extension HomeViewController {
+extension UIViewController {
     func setupShowMessage() {
         NotificationCenter.default.rx
             .notification(notificationNameShowMessage)

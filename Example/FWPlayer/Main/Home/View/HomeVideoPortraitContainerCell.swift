@@ -12,7 +12,7 @@ import SnapKit
 import Kingfisher
 
 protocol HomeVideoPortraitContainerCellDelegate: NSObjectProtocol {
-    func didSelectedVideoPortraitCell(videoModel: VideoModel)
+    func didSelectedVideoPortraitCell(currentIndex: Int, videoList: [VideoModel])
 }
 
 class HomeVideoPortraitContainerCell: UICollectionViewCell {
@@ -90,7 +90,7 @@ extension HomeVideoPortraitContainerCell: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectedVideoPortraitCell(videoModel: data[indexPath.row])
+        delegate?.didSelectedVideoPortraitCell(currentIndex: indexPath.row, videoList: data)
     }
     
     // inner margin
