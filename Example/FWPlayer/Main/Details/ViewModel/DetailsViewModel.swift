@@ -10,7 +10,7 @@ import UIKit
 
 class DetailsViewModel {
     private var currentIndex: Int = 0
-    var videoList = [VideoModel]()
+    private var videoList = [VideoModel]()
     
     init(currentIndex: Int, videoList: [VideoModel]) {
         self.currentIndex = currentIndex
@@ -33,6 +33,9 @@ extension DetailsViewModel {
                 videoUrls.append(URL(string: videoModel.videoUrl!)!)
             }
         }
+        let videoModel = videoUrls.remove(at: self.currentIndex)
+        videoUrls.insert(videoModel, at: 0)
+        
         self.updateDataBlock?(videoUrls)
     }
 }
@@ -50,5 +53,22 @@ extension DetailsViewModel {
 //        } else { // bottom cells
 //            return 400
 //        }
+    }
+}
+
+// MARK:- Others
+extension DetailsViewModel {
+    /// Check if the video needs feature 'Media Cache'
+    ///
+    /// - Returns: return a video type of the video list
+    func isTypeAssets() -> Bool {
+        if let type = videoList[currentIndex].type, type == "asset" {
+            return true
+        }
+        return false
+    }
+    
+    func getVideoModel(indexPath: IndexPath) -> VideoModel {
+        return videoList[indexPath.row]
     }
 }

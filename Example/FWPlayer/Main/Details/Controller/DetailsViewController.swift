@@ -54,9 +54,16 @@ class DetailsViewController: UIViewController {
     }
     
     private lazy var playerManager = FWAVPlayerManager()
-    private lazy var playerControlView = FWPlayerControlView()
+    private lazy var playerControlView = FWPlayerControlView().then {
+        $0.fastViewAnimated = true
+        $0.autoHiddenTimeInterval = 5.0
+        $0.autoFadeTimeInterval = 0.5
+        $0.prepareShowLoading = true
+        $0.prepareShowControlView = true
+    }
+    
     private var player: FWPlayerController?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -122,6 +129,10 @@ extension DetailsViewController {
 // MARK:- Setup player
 extension DetailsViewController {
     private func setupPlayer() {
+        // Enable media cache for assets
+        self.playerManager.isEnableMediaCache = viewModel.isTypeAssets()
+        Logging("isEnableMediaCache = \(self.playerManager.isEnableMediaCache)")
+        
         // The tag value of player must be set in the cell
         self.player = FWPlayerController(scrollView: self.tableView, playerManager: playerManager, containerViewTag: 100).then {
             $0.controlView = playerControlView
@@ -161,10 +172,10 @@ extension DetailsViewController {
     private func playTheVideoAtIndexPath(indexPath: IndexPath, scrollToTop: Bool) {
         self.player?.stopCurrentPlayingCell()
         self.player?.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
-        let videoModel = viewModel.videoList[indexPath.row]
+        let videoModel = viewModel.getVideoModel(indexPath: indexPath)
         let image = UIImage(named: "image_placeholder_landscape")
         self.playerControlView.showTitle(videoModel.title, cover: image, fullScreenMode: .landscape)
-//        self.playerControlView.showTitle(videoModel.title, coverURLString: videoModel.imageUrl, fullScreenMode: .landscape)
+        //        self.playerControlView.showTitle(videoModel.title, coverURLString: videoModel.imageUrl, fullScreenMode: .landscape)
     }
 }
 
@@ -205,23 +216,23 @@ extension DetailsViewController {
     }
 }
 
- // MARK:- UITableViewDelegate, UITableViewDataSource
+// MARK:- UITableViewDelegate, UITableViewDataSource
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection(section: section)
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: DetailsPlayerCell.reuseIdentifier, for: indexPath) as! DetailsPlayerCell
-            cell.delegate = self
-            cell.indexPath = indexPath
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DetailsPlayerCell.reuseIdentifier, for: indexPath) as! DetailsPlayerCell
+        cell.delegate = self
+        cell.indexPath = indexPath
+        return cell
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.heightForRowAt(indexPath: indexPath)
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
@@ -232,3 +243,4 @@ extension DetailsViewController: DetailsPlayerCellDelegate {
         self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
     }
 }
+
