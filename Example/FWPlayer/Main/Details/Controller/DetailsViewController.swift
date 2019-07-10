@@ -14,7 +14,7 @@ import Then
 import FWPlayerCore
 
 class DetailsViewController: UIViewController {
-    var viewModel = DetailsViewModel(currentIndex: 0, videoList: [VideoModel]())
+    var viewModel = DetailsViewModel(videoList: [VideoModel]())
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -30,7 +30,7 @@ class DetailsViewController: UIViewController {
     }
     
     private lazy var cancelBarButton = UIButton(type: .custom).then {
-        let itemSize = 20
+        let itemSize = 24
         let image = UIImage(named: "close")
         $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
@@ -42,7 +42,7 @@ class DetailsViewController: UIViewController {
     }
     
     private lazy var castBarButton = UIButton(type: .custom).then {
-        let itemSize = 20
+        let itemSize = 24
         let image = UIImage(named: "cast_light")
         $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
@@ -173,7 +173,7 @@ extension DetailsViewController {
         self.player?.stopCurrentPlayingCell()
         self.player?.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
         let videoModel = viewModel.getVideoModel(indexPath: indexPath)
-        let image = UIImage(named: "image_placeholder_landscape")
+        let image = UIImage(named: "cover_image_placeholder")
         self.playerControlView.showTitle(videoModel.title, cover: image, fullScreenMode: .landscape)
         //        self.playerControlView.showTitle(videoModel.title, coverURLString: videoModel.imageUrl, fullScreenMode: .landscape)
     }
@@ -224,8 +224,23 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailsPlayerCell.reuseIdentifier, for: indexPath) as! DetailsPlayerCell
+        
         cell.delegate = self
         cell.indexPath = indexPath
+        
+//        let videoModel = viewModel.getVideoModel(indexPath: indexPath)
+//        let image = UIImage(named: videoModel.imageUrl!)
+//        self.playerControlView.showTitle(videoModel.title, cover: image, fullScreenMode: .landscape)
+        
+        indexPath.row == 0 ? cell.showAdditionInfoView() : cell.hideAdditionInfoView()
+        viewModel.isLastItem(indexPath: indexPath) ? cell.hideBottomBlackView() : cell.showBottomBlackView()
+        
+        let videoModel = viewModel.getVideoModel(indexPath: indexPath)
+        cell.coverImageView.setImageWithURLString(viewModel.getLandscapeImageUrl(indexPath: indexPath), placeholderImageName: videoModel.imageUrl)
+        cell.videoTitleLabel.text = videoModel.title?.capitalized
+        cell.videoTypeLabel.text = videoModel.type?.capitalized
+        cell.videoDescTextView.text = videoModel.description?.capitalized
+        
         return cell
     }
     

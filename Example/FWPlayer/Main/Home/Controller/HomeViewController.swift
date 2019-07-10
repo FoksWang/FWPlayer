@@ -44,10 +44,11 @@ class HomeViewController: UIViewController {
     }
     
     private lazy var leftBarButton = UIButton(type: .custom).then {
-        let itemSize = 20
+        let width = 24
+        let height = 20
         let image = UIImage(named: "navigation_drawer_dark")
-        $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
-        $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
+        $0.setImage(image!.scaleToSize(size: CGSize(width: width, height: height)), for: .normal)
+        $0.frame = CGRect(x: 0, y: 0, width: width, height: height)
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         $0.rx.tap.subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
@@ -56,7 +57,7 @@ class HomeViewController: UIViewController {
     }
     
     private lazy var castBarButton = UIButton(type: .custom).then {
-        let itemSize = 20
+        let itemSize = 24
         let image = UIImage(named: "cast_dark")
         $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
@@ -68,7 +69,7 @@ class HomeViewController: UIViewController {
     }
     
     private lazy var searchBarButton = UIButton(type: .custom).then {
-        let itemSize = 20
+        let itemSize = 24
         let image = UIImage(named: "search_dark")
         $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
@@ -170,9 +171,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
 }
 
 extension HomeViewController: HomeCyclePagerContainerCellDelegate {
-    func didSelectedCyclePagerViewCell(currentIndex: Int, videoList: [VideoModel]) {
-        Logging("didSelectedCyclePagerViewCell: \(videoList[currentIndex].title ?? "N/A")")
-        let viewModel = DetailsViewModel(currentIndex: currentIndex, videoList: videoList)
+    func didSelectedCyclePagerViewCell(videoList: [VideoModel]) {
+        let viewModel = DetailsViewModel(videoList: videoList)
         let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "DetailsNavigationController") as! UINavigationController
         let viewController = navigationController.topViewController as! DetailsViewController
         viewController.viewModel = viewModel
@@ -181,9 +181,8 @@ extension HomeViewController: HomeCyclePagerContainerCellDelegate {
 }
 
 extension HomeViewController: HomeVideoPortraitContainerCellDelegate {
-    func didSelectedVideoPortraitCell(currentIndex: Int, videoList: [VideoModel]) {
-        Logging("didSelectedVideoPortraitCell: \(videoList[currentIndex].title ?? "N/A")")
-        let viewModel = DetailsViewModel(currentIndex: currentIndex, videoList: videoList)
+    func didSelectedVideoPortraitCell(videoList: [VideoModel]) {
+        let viewModel = DetailsViewModel(videoList: videoList)
         let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "DetailsNavigationController") as! UINavigationController
         let viewController = navigationController.topViewController as! DetailsViewController
         viewController.viewModel = viewModel

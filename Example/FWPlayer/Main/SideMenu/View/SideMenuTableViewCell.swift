@@ -9,12 +9,11 @@
 import UIKit
 
 class SideMenuTableViewCell: UITableViewCell {
+    static let className = "SideMenuTableViewCell"
+    static let reuseIdentifier = className
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var highlightView: UIView!
-    
-    static let className = "SideMenuTableViewCell"
-    static let reuseIdentifier = className
     
     override func awakeFromNib() {
         super.awakeFromNib()

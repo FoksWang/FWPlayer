@@ -9,11 +9,9 @@
 import UIKit
 
 class DetailsViewModel {
-    private var currentIndex: Int = 0
     private var videoList = [VideoModel]()
     
-    init(currentIndex: Int, videoList: [VideoModel]) {
-        self.currentIndex = currentIndex
+    init(videoList: [VideoModel]) {
         self.videoList = videoList
     }
     
@@ -33,9 +31,6 @@ extension DetailsViewModel {
                 videoUrls.append(URL(string: videoModel.videoUrl!)!)
             }
         }
-        let videoModel = videoUrls.remove(at: self.currentIndex)
-        videoUrls.insert(videoModel, at: 0)
-        
         self.updateDataBlock?(videoUrls)
     }
 }
@@ -47,12 +42,11 @@ extension DetailsViewModel {
     }
     
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
-//        if indexPath.row == 0 { // top cell
-            return 650
-            
-//        } else { // bottom cells
-//            return 400
-//        }
+        if indexPath.row == 0 { // top cell
+            return 620
+        } else { // bottom cells
+            return 450
+        }
     }
 }
 
@@ -62,7 +56,7 @@ extension DetailsViewModel {
     ///
     /// - Returns: return a video type of the video list
     func isTypeAssets() -> Bool {
-        if let type = videoList[currentIndex].type, type == "asset" {
+        if let type = videoList[0].type, type == "asset" {
             return true
         }
         return false
@@ -70,5 +64,13 @@ extension DetailsViewModel {
     
     func getVideoModel(indexPath: IndexPath) -> VideoModel {
         return videoList[indexPath.row]
+    }
+    
+    func getLandscapeImageUrl(indexPath: IndexPath) -> String? {
+        return videoList[indexPath.row].imageUrl
+    }
+    
+    func isLastItem(indexPath: IndexPath) -> Bool {
+        return indexPath.row == videoList.count - 1
     }
 }

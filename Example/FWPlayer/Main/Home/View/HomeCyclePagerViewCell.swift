@@ -9,11 +9,10 @@
 import UIKit
 
 class HomeCyclePagerViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var imageView: UIImageView!
-    
     static let className = "HomeCyclePagerViewCell"
     static let reuseIdentifier = className
+
+    @IBOutlet weak var imageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
