@@ -27,11 +27,12 @@ A video player SDK for iOS, it is based on AVPlayer.
 - [x] Supports UICollectionView playback
 - [x] Supports UIScrollView playback
 - [x] Supports background playback
+- [x] Supports play sound in silent mode by default
 - [x] Supports speed rate playback (0.5x, 1.0x, 1.25x, 1.5x, 2.0x)
 - [x] Supports custom player view
 - [x] Supports advertising view
 - [x] Supports adding Http headers and other options to AVURLAsset
-- FFmpeg is not supported because OpenGL ES was deprecated in iOS 12.
+- FFmpeg is not supported because OpenGL ES was deprecated in iOS 12
 
 ## Requirements
 - iOS 9 +
@@ -71,7 +72,7 @@ Since FWPlayer SDK is distributed as a binary, you need to use custom `binary` r
 1. Add following to your `Cartfile`:
 
 ```
-binary "https://raw.githubusercontent.com/FoksWang/FWPlayer/master/Carthage/FWPlayer.json" >= 1.0.3
+binary "https://raw.githubusercontent.com/FoksWang/FWPlayer/master/Carthage/FWPlayer.json" >= 1.0.5
 ```
 
 2. Fetch framework by running:
