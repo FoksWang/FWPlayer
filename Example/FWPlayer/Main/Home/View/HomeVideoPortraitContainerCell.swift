@@ -75,7 +75,7 @@ extension HomeVideoPortraitContainerCell: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeVideoPortraitCell.reuseIdentifier, for: indexPath) as! HomeVideoPortraitCell
-        let url = URL(string: data[indexPath.row].imageUrl!)
+        let url = URL(string: data[indexPath.row].imagePortraitUrl!)
         let image = UIImage(named: "image_placeholder_portrait")
         cell.posterImageView.kf.setImage(with: url, placeholder: image)
         

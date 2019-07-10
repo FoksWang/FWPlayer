@@ -228,15 +228,16 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         cell.indexPath = indexPath
         
-//        let videoModel = viewModel.getVideoModel(indexPath: indexPath)
-//        let image = UIImage(named: videoModel.imageUrl!)
-//        self.playerControlView.showTitle(videoModel.title, cover: image, fullScreenMode: .landscape)
-        
         indexPath.row == 0 ? cell.showAdditionInfoView() : cell.hideAdditionInfoView()
         viewModel.isLastItem(indexPath: indexPath) ? cell.hideBottomBlackView() : cell.showBottomBlackView()
         
         let videoModel = viewModel.getVideoModel(indexPath: indexPath)
-        cell.coverImageView.setImageWithURLString(viewModel.getLandscapeImageUrl(indexPath: indexPath), placeholderImageName: videoModel.imageUrl)
+        if videoModel.type == "local" {
+            cell.coverImageView.setImageWithURLString(videoModel.imageLandscapeUrl, placeholderImageName: videoModel.imageLandscapeUrl)
+        } else {
+            cell.coverImageView.setImageWithURLString(videoModel.imageLandscapeUrl, placeholderImageName: "cover_image_placeholder")
+        }
+        
         cell.videoTitleLabel.text = videoModel.title?.capitalized
         cell.videoTypeLabel.text = videoModel.type?.capitalized
         cell.videoDescTextView.text = videoModel.description?.capitalized

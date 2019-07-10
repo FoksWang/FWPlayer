@@ -81,7 +81,7 @@ extension HomeCyclePagerContainerCell: TYCyclePagerViewDelegate, TYCyclePagerVie
     
     func pagerView(_ pagerView: TYCyclePagerView, cellForItemAt index: Int) -> UICollectionViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: HomeCyclePagerViewCell.reuseIdentifier, for: index) as! HomeCyclePagerViewCell
-        cell.imageView.image = UIImage(named: data[index].imageUrl!)
+        cell.imageView.image = UIImage(named: data[index].imageLandscapeUrl!)
         return cell
     }
     

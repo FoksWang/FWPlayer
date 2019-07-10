@@ -20,28 +20,28 @@ class HomeViewModel {
         
         var video01 = VideoModel()
         video01.description = "Simba idolizes his father, King Mufasa, and takes to heart his own royal destiny on the plains of Africa. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother -- and former heir to the throne -- has plans of his own."
-        video01.imageUrl = "trailer_image_lion"
+        video01.imageLandscapeUrl = "image_lion_landscape"
         video01.title = "The Lion King"
         video01.type = "local"
         video01.videoUrl = Bundle.main.path(forResource: "trailer_lion.mp4", ofType: nil)
         
         var video02 = VideoModel()
         video02.description = "Red, Chuck, Bomb and the rest of their feathered friends are surprised when a green pig suggests that they put aside their differences and unite to fight a common threat."
-        video02.imageUrl = "trailer_image_birds"
+        video02.imageLandscapeUrl = "image_birds_landscape"
         video02.title = "The Angry Birds Movie 2"
         video02.type = "local"
         video02.videoUrl = Bundle.main.path(forResource: "trailer_birds.mp4", ofType: nil)
         
         var video03 = VideoModel()
         video03.description = "Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle."
-        video03.imageUrl = "trailer_image_avengers"
+        video03.imageLandscapeUrl = "image_avengers_landscape"
         video03.title = "Avengers: Endgame"
         video03.type = "local"
         video03.videoUrl = Bundle.main.path(forResource: "trailer_avengers.mp4", ofType: nil)
         
         var video04 = VideoModel()
         video04.description = "A man journeys across a lawless solar system to find his missing father -- a renegade scientist who poses a threat to humanity."
-        video04.imageUrl = "trailer_image_astra"
+        video04.imageLandscapeUrl = "image_astra_landscape"
         video04.title = "Ad Astra"
         video04.type = "local"
         video04.videoUrl = Bundle.main.path(forResource: "trailer_astra.mp4", ofType: nil)

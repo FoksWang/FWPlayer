@@ -66,10 +66,6 @@ extension DetailsViewModel {
         return videoList[indexPath.row]
     }
     
-    func getLandscapeImageUrl(indexPath: IndexPath) -> String? {
-        return videoList[indexPath.row].imageUrl
-    }
-    
     func isLastItem(indexPath: IndexPath) -> Bool {
         return indexPath.row == videoList.count - 1
     }

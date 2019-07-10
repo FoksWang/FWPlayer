@@ -24,7 +24,8 @@ struct VideoListModel: HandyJSON {
 
 struct VideoModel: HandyJSON {
     var description: String?
-    var imageUrl: String?
+    var imageLandscapeUrl: String?
+    var imagePortraitUrl: String?
     var title: String?
     var type: String?
     var videoUrl: String?
