@@ -229,7 +229,6 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.indexPath = indexPath
         
         indexPath.row == 0 ? cell.showAdditionInfoView() : cell.hideAdditionInfoView()
-        viewModel.isLastItem(indexPath: indexPath) ? cell.hideBottomBlackView() : cell.showBottomBlackView()
         
         let videoModel = viewModel.getVideoModel(indexPath: indexPath)
         if videoModel.type == "local" {

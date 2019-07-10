@@ -25,7 +25,6 @@ class DetailsPlayerCell: UITableViewCell {
     
     @IBOutlet weak var additionInfoView: UIView!
     @IBOutlet weak var additionInfoViewHeight: NSLayoutConstraint! // 133
-    @IBOutlet weak var bottomBlackView: UIView!
     
     @IBOutlet weak var videoTitleLabel: UILabel!
     @IBOutlet weak var videoTypeLabel: UILabel!
@@ -70,13 +69,5 @@ class DetailsPlayerCell: UITableViewCell {
     func hideAdditionInfoView() {
         additionInfoView.isHidden = true
         additionInfoViewHeight.constant = 0
-    }
-    
-    func showBottomBlackView() {
-        bottomBlackView.isHidden = false
-    }
-    
-    func hideBottomBlackView() {
-        bottomBlackView.isHidden = true
     }
 }
