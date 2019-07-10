@@ -98,9 +98,10 @@ extension HomeCyclePagerContainerCell: TYCyclePagerViewDelegate, TYCyclePagerVie
     }
     
     func pagerView(_ pageView: TYCyclePagerView, didSelectedItemCell cell: UICollectionViewCell, at index: Int) {
-        let videoModel = data.remove(at: index)
-        data.insert(videoModel, at: 0)
-        self.delegate?.didSelectedCyclePagerViewCell(videoList: data)
+        var videoList = data
+        let videoModel = videoList.remove(at: index)
+        videoList.insert(videoModel, at: 0)
+        self.delegate?.didSelectedCyclePagerViewCell(videoList: videoList)
     }
 }
 

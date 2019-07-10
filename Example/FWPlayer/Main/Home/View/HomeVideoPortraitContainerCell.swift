@@ -90,9 +90,10 @@ extension HomeVideoPortraitContainerCell: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let videoModel = data.remove(at: indexPath.row)
-        data.insert(videoModel, at: 0)
-        delegate?.didSelectedVideoPortraitCell(videoList: data)
+        var videoList = data
+        let videoModel = videoList.remove(at: indexPath.row)
+        videoList.insert(videoModel, at: 0)
+        delegate?.didSelectedVideoPortraitCell(videoList: videoList)
     }
     
     // inner margin
