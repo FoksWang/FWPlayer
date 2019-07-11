@@ -119,8 +119,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appVersionLabel" destination="sZy-sx-5aj" id="c4c-NP-B6m"/>
+                        <outlet property="sdkVersionLabel" destination="3TF-dr-Rle" id="8ZR-3G-HXB"/>
                         <outlet property="tableView" destination="SGK-iV-bLr" id="Rg8-WD-Buk"/>
-                        <outlet property="versionLabel" destination="sZy-sx-5aj" id="uS6-gs-M0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AC-nb-VsU" userLabel="First Responder" sceneMemberID="firstResponder"/>

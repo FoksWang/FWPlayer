@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 import SwiftMessages
+import FWPlayerCore
 
 // MARK:- NotificationCenter
 extension UIViewController {
@@ -48,6 +49,13 @@ extension UIViewController {
             return "App version: \(String(describing: appVersion!)) (\(String(describing: appBuild!)))"
         }
         return "App version: N/A"
+    }
+    
+    func showSDKVersionBuild() -> String {
+        if let appVersion = FWAVPlayerManager.getVersionNumber(), let appBuild = FWAVPlayerManager.getBuildNumber() {
+            return "SDK version: \(appVersion) (\(appBuild))"
+        }
+        return "SDK version: N/A"
     }
 }
 
