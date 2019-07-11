@@ -1,4 +1,6 @@
-# FWPlayer
+<p align="center" >
+  <img src="GitImages/github_logo.png" alt="FWPlayer" title="FWPlayer">
+</p>
 
 ![Swift5](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat%22)
 [![Version](https://img.shields.io/cocoapods/v/FWPlayer.svg?style=flat)](https://cocoapods.org/pods/FWPlayer)
@@ -171,6 +173,7 @@ playerManager.isEnableMediaCache = true
 ```
 
 ## Demonstration
+<img src="GitImages/Screenshot1.jpg" height="500"> <img src="GitImages/Screenshot2.jpg" height="500"> <img src="GitImages/Screenshot3.jpg" height="500">
 
 ## References
 - https://github.com/Bilibili/ijkplayer
