@@ -32,7 +32,7 @@
  */
 @property (nonatomic, assign) BOOL isPlaySoundInSilentMode;
 
-- (NSString *)getVersionNumber;
-- (NSString *)getBuildNumber;
++ (NSString *)getVersionNumber;
++ (NSString *)getBuildNumber;
 
 @end
