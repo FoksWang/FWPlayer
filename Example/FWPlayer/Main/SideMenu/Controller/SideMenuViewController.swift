@@ -12,6 +12,8 @@ import SideMenuSwift
 class SideMenuViewController: UIViewController {
     var nameArray = ["Home","About"]
     
+    @IBOutlet weak var versionLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib(nibName: SideMenuTableViewCell.className, bundle: nil), forCellReuseIdentifier: SideMenuTableViewCell.reuseIdentifier)
@@ -31,6 +33,7 @@ class SideMenuViewController: UIViewController {
 extension SideMenuViewController {
     private func setupUI() {
         setupSideMenu()
+        versionLabel.text = showAppVersionBuild()
     }
     
     private func setupSideMenu() {

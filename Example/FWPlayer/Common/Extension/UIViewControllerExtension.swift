@@ -39,4 +39,15 @@ extension UIViewController {
             SwiftMessages.show(config: config, view: view)
         }
     }
+    
+    func showAppVersionBuild() -> String {
+        let infoDictionary = Bundle.main.infoDictionary
+        if let infoDictionary = infoDictionary {
+            let appVersion = infoDictionary["CFBundleShortVersionString"]
+            let appBuild = infoDictionary["CFBundleVersion"]
+            return "App version: \(String(describing: appVersion!)) (\(String(describing: appBuild!)))"
+        }
+        return "App version: N/A"
+    }
 }
+
