@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
-  - FWPlayer (1.0.5)
+  - FWPlayer (1.0.6)
   - HandyJSON (5.0.0)
   - IQKeyboardManagerSwift (6.4.0)
   - Kingfisher (5.6.0)
@@ -75,7 +75,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  FWPlayer: 0db5751e0cffd9fafcb20645bf1e12b046dde231
+  FWPlayer: 829c94e7cd2f9da57d6ba1d0f21950a6615d06b8
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
   Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
