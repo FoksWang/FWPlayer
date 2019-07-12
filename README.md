@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="GitImages/github_logo.png" alt="FWPlayer" title="FWPlayer">
+  <img src="https://raw.githubusercontent.com/FoksWang/FWPlayer/master/GitImages/github_logo.png" alt="FWPlayer" title="FWPlayer">
 </p>
 
 ![Swift5](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat%22)
@@ -173,7 +173,9 @@ playerManager.isEnableMediaCache = true
 ```
 
 ## Demonstration
-<img src="GitImages/Screenshot1.jpg" height="500"> <img src="GitImages/Screenshot2.jpg" height="500"> <img src="GitImages/Screenshot3.jpg" height="500">
+<img src="GitImages/player_video.gif" height="500">
+
+<img src="GitImages/Screenshot1.jpg" height="500">&nbsp;&nbsp;&nbsp;&nbsp;<img src="GitImages/Screenshot2.jpg" height="500">&nbsp;&nbsp;&nbsp;&nbsp;<img src="GitImages/Screenshot3.jpg" height="500">
 
 ## References
 - https://github.com/Bilibili/ijkplayer
