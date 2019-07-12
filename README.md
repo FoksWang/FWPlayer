@@ -173,10 +173,14 @@ playerManager.isEnableMediaCache = true
 ```
 
 ## Demonstration
-<img src="GitImages/player_video.gif" height="500">
+ 
+#### Animation
+![](GitImages/player_video.gif=500x)
 
+#### ScreenShots
 <img src="GitImages/Screenshot1.jpg" height="500">&nbsp;&nbsp;&nbsp;&nbsp;<img src="GitImages/Screenshot2.jpg" height="500">&nbsp;&nbsp;&nbsp;&nbsp;<img src="GitImages/Screenshot3.jpg" height="500">
 
+#### Video
 [![FWPlayer demo](https://img.youtube.com/vi/syU0dPZ3bZo/0.jpg)](https://youtu.be/syU0dPZ3bZo)
 
 ## References
