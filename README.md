@@ -177,6 +177,8 @@ playerManager.isEnableMediaCache = true
 
 <img src="GitImages/Screenshot1.jpg" height="500">&nbsp;&nbsp;&nbsp;&nbsp;<img src="GitImages/Screenshot2.jpg" height="500">&nbsp;&nbsp;&nbsp;&nbsp;<img src="GitImages/Screenshot3.jpg" height="500">
 
+[![FWPlayer demo](https://img.youtube.com/vi/syU0dPZ3bZo/0.jpg)](https://youtu.be/syU0dPZ3bZo)
+
 ## References
 - https://github.com/Bilibili/ijkplayer
 - https://github.com/changsanjiang/SJVideoPlayer
