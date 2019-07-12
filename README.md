@@ -173,9 +173,7 @@ playerManager.isEnableMediaCache = true
 ```
 
 ## Demonstration
- 
-#### Animation
-![](GitImages/player_video.gif=500x)
+<img src="GitImages/player_video.gif" height="500">
 
 #### ScreenShots
 <img src="GitImages/Screenshot1.jpg" height="500">&nbsp;&nbsp;&nbsp;&nbsp;<img src="GitImages/Screenshot2.jpg" height="500">&nbsp;&nbsp;&nbsp;&nbsp;<img src="GitImages/Screenshot3.jpg" height="500">
