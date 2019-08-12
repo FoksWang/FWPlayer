@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FWPlayer'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'A video player SDK for iOS.'
   s.swift_version    = '5.0'
 
