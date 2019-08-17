@@ -114,6 +114,42 @@ self.player = FWPlayerController(playerManager: playerManager, containerView: se
 self.player!.controlView = self.controlView
 ```
 
+#### To play the next or previous video, just set:
+**Objective-C**
+```objective-c
+self.player.assetURLs = self.assetURLs;
+```
+
+**Swift**
+```swift
+self.player!.assetURLs = self.assetURLs
+```
+
+- To play the next video, please call method `playTheNext`
+- To play the previous video, please call method `playThePrevious`
+- To play the video from the asset list, please call method `playTheIndex:index`
+
+#### For example, play the next video:
+**Objective-C**
+```objective-c
+if (!self.player.isLastAssetURL) {
+    [self.player playTheNext];
+    [self.controlView showTitle:@"Video title" coverURLString:kVideoCover fullScreenMode:FWFullScreenModeAutomatic];
+} else {
+    NSLog(@"No more videos");
+}
+```
+
+**Swift**
+```swift
+if self.player!.isLastAssetURL == false {
+    self.player!.playTheNext()
+    self.controlView.showTitle("Video title", coverURLString: kVideoCover, fullScreenMode: .automatic)
+} else {
+    print("No more videos")
+}
+```
+
 ### List Style
 **Objective-C**
 ```objective-c
