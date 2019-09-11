@@ -74,13 +74,13 @@ Since FWPlayer SDK is distributed as a binary, you need to use custom `binary` r
 1. Add following to your `Cartfile`:
 
 ```
-binary "https://raw.githubusercontent.com/FoksWang/FWPlayer/master/Carthage/FWPlayer.json" >= 1.0.7
+binary "https://raw.githubusercontent.com/FoksWang/FWPlayer/master/Carthage/FWPlayer.json" ~> 1.0.7
 ```
 
 2. Fetch framework by running:
 
 ```bash
-$ carthage update FWPlayer --platform iOS
+$ carthage update --platform iOS
 ```
 
 ### Manual Installation
