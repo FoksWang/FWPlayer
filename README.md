@@ -67,7 +67,7 @@ end
 $ pod install
 ```
 
-3. Switch over to `Build Phases` and add a `New Run Script Phase` by clicking the `+` in the top left of the editor. Add the following command:
+3. Switch over to `Build Phases` and add a `New Run Script Phase` by clicking the `+` in the top left of the editor. Add the following command to solve the issue of [App Store submission](http://www.openradar.me/radar?id=6409498411401216).
 ```bash
 bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWPlayerCore.framework/strip-frameworks.sh"
 ```
