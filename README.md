@@ -67,6 +67,11 @@ end
 $ pod install
 ```
 
+3. Switch over to `Build Phases` and add a `New Run Script Phase` by clicking the `+` in the top left of the editor. Add the following command:
+```bash
+bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWPlayerCore.framework/strip-frameworks.sh"
+```
+
 ### Carthage
 
 Since FWPlayer SDK is distributed as a binary, you need to use custom `binary` rule in your `Cartfile`.
