@@ -114,9 +114,54 @@ self.player.controlView = self.controlView;
 
 **Swift**
 ```swift
+private var player: FWPlayerController?
+
+private lazy var containerView: UIImageView = {
+	let imageView = UIImageView()
+	imageView.setImageWithURLString(coverImageUrl, placeholder: UIImage(named: "placeholder"))
+	return imageView
+}()
+
+private lazy var controlView: FWPlayerControlView =  {
+	let view = FWPlayerControlView()
+	view.fastViewAnimated = true
+	view.autoHiddenTimeInterval = 5.0
+	view.autoFadeTimeInterval = 0.5
+	view.prepareShowLoading = true
+	view.prepareShowControlView = true
+	return view
+}()
+
 let playerManager = FWAVPlayerManager()
+playerManager.isEnableMediaCache = false
+
+// Setup player
 self.player = FWPlayerController(playerManager: playerManager, containerView: self.containerView)
-self.player!.controlView = self.controlView
+self.player?.controlView = self.controlView
+
+// Setup continue playing in the background
+self.player?.pauseWhenAppResignActive = true
+
+self.player?.orientationWillChange = { [weak self] (player, isFullScreen) in
+	self?.setNeedsStatusBarAppearanceUpdate()
+}
+
+// Finished playing
+self.player?.playerDidToEnd = { [weak self] (asset) in
+	guard let strongSelf = self else {
+		return
+	}
+	strongSelf.player?.currentPlayerManager.replay!()
+	strongSelf.player?.playTheNext()
+	if strongSelf.player?.isLastAssetURL == false {
+		strongSelf.controlView.showTitle("Video Title", coverURLString: strongSelf.kVideoCover, fullScreenMode: .landscape)
+	} else {
+		strongSelf.player?.stop()
+	}
+}
+
+self.player?.assetURLs = self.assetURLs
+
 ```
 
 #### To play the next or previous video, just set:
