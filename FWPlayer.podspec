@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FWPlayer'
-  s.version          = '1.0.8'
+  s.version          = '1.0.9'
   s.summary          = 'A video player SDK for iOS.'
   s.swift_version    = '5.0'
 
@@ -30,7 +30,9 @@ For more information, please see README.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '9.0'
-  # s.ios.deployment_target = '8.0'
+  # s.ios.deployment_target = '9.0'
+  s.requires_arc = true
+  s.static_framework = true
 
   # s.source_files = 'FWPlayer/Classes/**/*'
   # s.source_files = 'FWPlayer/Classes/*.{h,swift}'

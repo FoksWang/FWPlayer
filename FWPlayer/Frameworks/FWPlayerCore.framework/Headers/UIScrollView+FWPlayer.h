@@ -83,6 +83,9 @@ typedef NS_ENUM(NSInteger, FWPlayerContainerType) {
 /// The block invoked When the player did stop scroll.
 @property (nonatomic, copy, nullable) void(^fw_scrollViewDidStopScrollCallback)(NSIndexPath *indexPath);
 
+/// The block invoked When the player did  scroll.
+@property (nonatomic, copy, nullable) void(^fw_scrollViewDidScrollCallback)(NSIndexPath *indexPath);
+
 /// The block invoked When the player should play.
 @property (nonatomic, copy, nullable) void(^fw_shouldPlayIndexPathCallback)(NSIndexPath *indexPath);
 
@@ -148,8 +151,8 @@ typedef NS_ENUM(NSInteger, FWPlayerContainerType) {
 @property (nonatomic, copy, nullable) void(^fw_playerDidDisappearInScrollView)(NSIndexPath *indexPath);
 
 /// The current player scroll slides off the screen percent.
-/// the property used when the 'stopWhileNotVisible' is YES, stop the current playing player.
-/// the property used when the 'stopWhileNotVisible' is NO, the current playing player add to small container view.
+/// the property used when the `stopWhileNotVisible` is YES, stop the current playing player.
+/// the property used when the `stopWhileNotVisible` is NO, the current playing player add to small container view.
 /// 0.0~1.0, defalut is 0.5.
 /// 0.0 is the player will disappear.
 /// 1.0 is the player did disappear.

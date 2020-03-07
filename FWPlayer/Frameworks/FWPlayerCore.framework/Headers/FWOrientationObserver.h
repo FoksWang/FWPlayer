@@ -39,6 +39,7 @@ typedef NS_OPTIONS(NSUInteger, FWInterfaceOrientationMask) {
 
 @interface FWOrientationObserver : NSObject
 
+/// update the rotateView and containerView.
 - (void)updateRotateView:(UIView *)rotateView
            containerView:(UIView *)containerView;
 
@@ -104,6 +105,7 @@ typedef NS_OPTIONS(NSUInteger, FWInterfaceOrientationMask) {
 /// Enter the fullScreen while the FWFullScreenMode is FWFullScreenModePortrait.
 - (void)enterPortraitFullScreen:(BOOL)fullScreen animated:(BOOL)animated;
 
+/// Exit the fullScreen.
 - (void)exitFullScreenWithAnimated:(BOOL)animated;
 
 @end

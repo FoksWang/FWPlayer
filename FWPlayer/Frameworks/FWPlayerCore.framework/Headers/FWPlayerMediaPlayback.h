@@ -37,18 +37,18 @@ typedef NS_ENUM(NSInteger, FWPlayerScalingMode) {
 @protocol FWPlayerMediaPlayback <NSObject>
 
 @required
-/// The view must inherited 'FWPlayerView',this view deals with some gesture conflicts.
+/// The view must inherited `FWPlayerView`,this view deals with some gesture conflicts.
 @property (nonatomic) FWPlayerView *view;
 
 @optional
 /// The player volume.
 /// Only affects audio volume for the player instance and not for the device.
-/// You can change device volume or player volume as needed,change the player volume you can folllow the 'FWPlayerMediaPlayback' protocol.
+/// You can change device volume or player volume as needed,change the player volume you can folllow the `FWPlayerMediaPlayback` protocol.
 @property (nonatomic) float volume;
 
 /// The player muted.
 /// indicates whether or not audio output of the player is muted. Only affects audio muting for the player instance and not for the device.
-/// You can change device volume or player muted as needed,change the player muted you can folllow the 'FWPlayerMediaPlayback' protocol.
+/// You can change device volume or player muted as needed,change the player muted you can folllow the `FWPlayerMediaPlayback` protocol.
 @property (nonatomic, getter=isMuted) BOOL muted;
 
 /// Playback speed,0.5...2
@@ -76,9 +76,9 @@ typedef NS_ENUM(NSInteger, FWPlayerScalingMode) {
  @abstract Check whether video preparation is complete.
  @discussion isPreparedToPlay processing logic
  
- * If isPreparedToPlay is TRUE, you can call [FWPlayerMediaPlayback play] API start playing;
- * If isPreparedToPlay to FALSE, direct call [FWPlayerMediaPlayback play], in the play the internal automatic call [FWPlayerMediaPlayback prepareToPlay] API.
- * Returns YES if prepared for playback.
+ * If isPreparedToPlay is true, you can call [FWPlayerMediaPlayback play] API start playing;
+ * If isPreparedToPlay to false, direct call [FWPlayerMediaPlayback play], in the play the internal automatic call [FWPlayerMediaPlayback prepareToPlay] API.
+ * Returns true if prepared for playback.
  */
 @property (nonatomic, readonly) BOOL isPreparedToPlay;
 
@@ -99,7 +99,7 @@ typedef NS_ENUM(NSInteger, FWPlayerScalingMode) {
 
 ///------------------------------------
 /// If you don't appoint the controlView, you can called the following blocks.
-/// If you appoint the controlView, The following block cannot be called outside, only for 'FWPlayerController' calls.
+/// If you appoint the controlView, The following block cannot be called outside, only for `FWPlayerController` calls.
 ///------------------------------------
 
 /// The block invoked when the player is Prepare to play.
@@ -152,7 +152,7 @@ typedef NS_ENUM(NSInteger, FWPlayerScalingMode) {
 - (void)stop;
 
 /// Video UIImage at the current time.
-@property (NS_NONATOMIC_IOSONLY, readonly, strong) UIImage * _Nonnull thumbnailImageAtCurrentTime;
+- (UIImage *)thumbnailImageAtCurrentTime;
 
 /// Use this method to seek to a specified time for the current player and to be notified when the seek operation is complete.
 - (void)seekToTime:(NSTimeInterval)time completionHandler:(void (^ __nullable)(BOOL finished))completionHandler;

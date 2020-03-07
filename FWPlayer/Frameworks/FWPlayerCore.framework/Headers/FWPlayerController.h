@@ -23,10 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// The video contrainerView in normal model.
 @property (nonatomic, strong) UIView *containerView;
 
-/// The currentPlayerManager must conform 'FWPlayerMediaPlayback' protocol.
+/// The currentPlayerManager must conform `FWPlayerMediaPlayback` protocol.
 @property (nonatomic, strong) id<FWPlayerMediaPlayback> currentPlayerManager;
 
-/// The custom controlView must conform 'FWPlayerMediaControl' protocol.
+/// The custom controlView must conform `FWPlayerMediaControl` protocol.
 @property (nonatomic, strong) UIView<FWPlayerMediaControl> *controlView;
 
 /// The notification manager class.
@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  @method            playerWithPlayerManager:containerView:
  @abstract          Create an FWPlayerController that plays a single audiovisual item.
- @param             playerManager must conform 'FWPlayerMediaPlayback' protocol.
+ @param             playerManager must conform `FWPlayerMediaPlayback` protocol.
  @param             containerView to see the video frames must set the contrainerView.
  @result            An instance of FWPlayerController.
  */
@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  @method            initWithPlayerManager:containerView:
  @abstract          Create an FWPlayerController that plays a single audiovisual item.
- @param             playerManager must conform 'FWPlayerMediaPlayback' protocol.
+ @param             playerManager must conform `FWPlayerMediaPlayback` protocol.
  @param             containerView to see the video frames must set the contrainerView.
  @result            An instance of FWPlayerController.
  */
@@ -61,9 +61,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @method            playerWithScrollView:playerManager:containerViewTag:
- @abstract          Create an FWPlayerController that plays a single audiovisual item. Use in 'UITableView' or 'UICollectionView'.
- @param             scrollView is 'tableView' or 'collectionView'.
- @param             playerManager must conform 'FWPlayerMediaPlayback' protocol.
+ @abstract          Create an FWPlayerController that plays a single audiovisual item. Use in `UITableView` or `UICollectionView`.
+ @param             scrollView is `tableView` or `collectionView`.
+ @param             playerManager must conform `FWPlayerMediaPlayback` protocol.
  @param             containerViewTag to see the video at scrollView must set the contrainerViewTag.
  @result            An instance of FWPlayerController.
  */
@@ -71,9 +71,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @method            initWithScrollView:playerManager:containerViewTag:
- @abstract          Create an FWPlayerController that plays a single audiovisual item. Use in 'UITableView' or 'UICollectionView'.
- @param             scrollView is 'tableView' or 'collectionView'.
- @param             playerManager must conform 'FWPlayerMediaPlayback' protocol.
+ @abstract          Create an FWPlayerController that plays a single audiovisual item. Use in `UITableView` or `UICollectionView`.
+ @param             scrollView is `tableView` or `collectionView`.
+ @param             playerManager must conform `FWPlayerMediaPlayback` protocol.
  @param             containerViewTag to see the video at scrollView must set the contrainerViewTag.
  @result            An instance of FWPlayerController.
  */
@@ -81,8 +81,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @method            playerWithScrollView:playerManager:containerView:
- @abstract          Create an FWPlayerController that plays a single audiovisual item. Use in 'UIScrollView'.
- @param             playerManager must conform 'FWPlayerMediaPlayback' protocol.
+ @abstract          Create an FWPlayerController that plays a single audiovisual item. Use in `UIScrollView`.
+ @param             playerManager must conform `FWPlayerMediaPlayback` protocol.
  @param             containerView to see the video at the scrollView.
  @result            An instance of FWPlayerController.
  */
@@ -90,8 +90,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @method            initWithScrollView:playerManager:containerView:
- @abstract          Create an FWPlayerController that plays a single audiovisual item. Use in 'UIScrollView'.
- @param             playerManager must conform 'FWPlayerMediaPlayback' protocol.
+ @abstract          Create an FWPlayerController that plays a single audiovisual item. Use in `UIScrollView`.
+ @param             playerManager must conform `FWPlayerMediaPlayback` protocol.
  @param             containerView to see the video at the scrollView.
  @result            An instance of FWPlayerController.
  */
@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Use this method to seek to a specified time for the current player and to be notified when the seek operation is complete.
- 
+
  @param time seek time.
  @param completionHandler completion handler.
  */
@@ -130,12 +130,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 0...1.0
 /// Only affects audio volume for the device instance and not for the player.
-/// You can change device volume or player volume as needed,change the player volume you can conform the 'FWPlayerMediaPlayback' protocol.
+/// You can change device volume or player volume as needed,change the player volume you can conform the `FWPlayerMediaPlayback` protocol.
 @property (nonatomic) float volume;
 
 /// The device muted.
 /// Only affects audio muting for the device instance and not for the player.
-/// You can change device mute or player mute as needed,change the player mute you can conform the 'FWPlayerMediaPlayback' protocol.
+/// You can change device mute or player mute as needed,change the player mute you can conform the `FWPlayerMediaPlayback` protocol.
 @property (nonatomic, getter=isMuted) BOOL muted;
 
 // 0...1.0, where 1.0 is maximum brightness. Only supported by main screen.
@@ -144,21 +144,21 @@ NS_ASSUME_NONNULL_BEGIN
 /// The play asset URL.
 @property (nonatomic) NSURL *assetURL;
 
-/// If tableView or collectionView has only one section , use 'assetURLs'.
-/// If tableView or collectionView has more sections , use 'sectionAssetURLs'.
-/// Set this you can use 'playTheNext' 'playThePrevious' 'playTheIndex:' method.
+/// If tableView or collectionView has only one section , use `assetURLs`.
+/// If tableView or collectionView has more sections , use `sectionAssetURLs`.
+/// Set this you can use `playTheNext` `playThePrevious` `playTheIndex:` method.
 @property (nonatomic, copy, nullable) NSArray <NSURL *>*assetURLs;
 
 /// The currently playing index,limited to one-dimensional arrays.
 @property (nonatomic) NSInteger currentPlayIndex;
 
-/// is the last asset URL in 'assetURLs'.
+/// is the last asset URL in `assetURLs`.
 @property (nonatomic, readonly) BOOL isLastAssetURL;
 
-/// is the first asset URL in 'assetURLs'.
+/// is the first asset URL in `assetURLs`.
 @property (nonatomic, readonly) BOOL isFirstAssetURL;
 
-/// If Yes, player will be called pause method When Received 'UIApplicationWillResignActiveNotification' notification.
+/// If Yes, player will be called pause method When Received `UIApplicationWillResignActiveNotification` notification.
 /// default is YES.
 @property (nonatomic) BOOL pauseWhenAppResignActive;
 
@@ -201,18 +201,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) void(^presentationSizeChanged)(id<FWPlayerMediaPlayback> asset, CGSize size);
 
 /**
- Play the next url ,while the 'assetURLs' is not NULL.
+ Play the next url ,while the `assetURLs` is not NULL.
  */
 - (void)playTheNext;
 
 /**
- Play the previous url ,while the 'assetURLs' is not NULL.
+  Play the previous url ,while the `assetURLs` is not NULL.
  */
 - (void)playThePrevious;
 
 /**
- Play the index of url ,while the 'assetURLs' is not NULL.
- 
+ Play the index of url ,while the `assetURLs` is not NULL.
+
  @param index play the index.
  */
 - (void)playTheIndex:(NSInteger)index;
@@ -225,7 +225,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  @method           replaceCurrentPlayerManager:
  @abstract         Replaces the player's current playeranager with the specified player item.
- @param            manager must conform 'FWPlayerMediaPlayback' protocol
+ @param            manager must conform `FWPlayerMediaPlayback` protocol
  @discussion       The playerManager that will become the player's current playeranager.
  */
 - (void)replaceCurrentPlayerManager:(id<FWPlayerMediaPlayback>)manager;
@@ -263,7 +263,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Whether automatic screen rotation is supported.
 /// iOS8.1~iOS8.3 the value is YES, other iOS version the value is NO.
-/// This property is used for the return value of UIViewController 'shouldAutorotate' method.
+/// This property is used for the return value of UIViewController `shouldAutorotate` method.
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 
 /// Whether allow the video orientation rotate.
@@ -274,7 +274,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// When FWFullScreenMode is FWFullScreenModePortrait, while the player fullSceen this value is YES.
 @property (nonatomic, readonly) BOOL isFullScreen;
 
-/// when call the 'stop' method, exit the fullScreen model, default is YES.
+/// when call the `stop` method, exit the fullScreen model, default is YES.
 @property (nonatomic, assign) BOOL exitFullScreenWhenStop;
 
 /// Lock the screen orientation.
@@ -289,9 +289,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// The current orientation of the player.
 /// Default is UIInterfaceOrientationPortrait.
 @property (nonatomic, readonly) UIInterfaceOrientation currentOrientation;
-
-
-//@property (nonatomic, assign) BOOL <#instace#>
 
 /// The block invoked When player will rotate.
 @property (nonatomic, copy, nullable) void(^orientationWillChange)(FWPlayerController *player, BOOL isFullScreen);
@@ -311,7 +308,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Enter the fullScreen while the FWFullScreenMode is FWFullScreenModeLandscape.
- 
+
  @param orientation UIInterfaceOrientation
  @param animated is animated.
  */
@@ -319,7 +316,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Enter the fullScreen while the FWFullScreenMode is FWFullScreenModePortrait.
- 
+
  @param fullScreen is fullscreen.
  @param animated is animated.
  */
@@ -327,7 +324,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  FullScreen mode is determined by FWFullScreenMode.
- 
+
  @param fullScreen is fullscreen.
  @param animated is animated.
  */
@@ -350,13 +347,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FWPlayerController (FWPlayerScrollView)
 
-/// The scroll view is 'tableView' or 'collectionView'.
+/// The scroll view is `tableView` or `collectionView`.
 @property (nonatomic, readonly, nullable) UIScrollView *scrollView;
 
 /// The scrollView player should auto player, default is YES.
 @property (nonatomic) BOOL shouldAutoPlay;
 
-/// WWAN network auto play, only support in scrollView mode when the 'shouldAutoPlay' is YES, default is NO.
+/// WWAN network auto play, only support in scrollView mode when the `shouldAutoPlay` is YES, default is NO.
 @property (nonatomic, getter=isWWANAutoPlay) BOOL WWANAutoPlay;
 
 /// The indexPath is playing.
@@ -370,8 +367,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The current player scroll slides off the screen percent.
- the property used when the 'stopWhileNotVisible' is YES, stop the current playing player.
- the property used when the 'stopWhileNotVisible' is NO, the current playing player add to small container view.
+ the property used when the `stopWhileNotVisible` is YES, stop the current playing player.
+ the property used when the `stopWhileNotVisible` is NO, the current playing player add to small container view.
  The range is 0.0~1.0, defalut is 0.5.
  0.0 is the player will disappear.
  1.0 is the player did disappear.
@@ -386,7 +383,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic) CGFloat playerApperaPercent;
 
-/// If tableView or collectionView has more sections, use 'sectionAssetURLs'.
+/// If tableView or collectionView has more sections, use `sectionAssetURLs`.
 @property (nonatomic, copy, nullable) NSArray <NSArray <NSURL *>*>*sectionAssetURLs;
 
 /// The block invoked When the player appearing.
@@ -408,14 +405,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) void(^fw_playerDidDisappearInScrollView)(NSIndexPath *indexPath);
 
 /**
- Play the indexPath of url, while the 'assetURLs' or 'sectionAssetURLs' is not NULL.
- 
+ Play the indexPath of url, while the `assetURLs` or `sectionAssetURLs` is not NULL.
+
  @param indexPath Play the indexPath of url.
  */
 - (void)playTheIndexPath:(NSIndexPath *)indexPath;
 
 /**
- Play the indexPath of url ,while the 'assetURLs' or 'sectionAssetURLs' is not NULL.
+ Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
  
  @param indexPath Play the indexPath of url
  @param scrollToTop Scroll the current cell to top with animations.
@@ -423,7 +420,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop;
 
 /**
- Play the indexPath of url ,while the 'assetURLs' or 'sectionAssetURLs' is not NULL.
+ Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
  
  @param indexPath Play the indexPath of url
  @param assetURL The player URL.
@@ -432,7 +429,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)playTheIndexPath:(NSIndexPath *)indexPath assetURL:(NSURL *)assetURL scrollToTop:(BOOL)scrollToTop;
 
 /**
- Play the indexPath of url ,while the 'assetURLs' or 'sectionAssetURLs' is not NULL.
+ Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
  
  @param indexPath Play the indexPath of url
  @param scrollToTop scroll the current cell to top with animations.
@@ -447,14 +444,14 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Add the playerView to cell.
  */
-- (void)updateScrollViewPlayerToCell  __attribute__((deprecated("use 'addPlayerViewToCell:' instead.")));
+- (void)updateScrollViewPlayerToCell  __attribute__((deprecated("use `addPlayerViewToCell:` instead.")));
 
 /**
  Add the playerView to containerView.
  
  @param containerView The playerView containerView.
  */
-- (void)updateNoramlPlayerWithContainerView:(UIView *)containerView __attribute__((deprecated("use 'addPlayerViewToContainerView:' instead.")));
+- (void)updateNoramlPlayerWithContainerView:(UIView *)containerView __attribute__((deprecated("use `addPlayerViewToContainerView:` instead.")));
 
 @end
 

@@ -94,8 +94,10 @@ typedef NS_OPTIONS(NSUInteger, FWPlayerDisablePanMovingDirection) {
 /// The pan gesture direction.
 @property (nonatomic, readonly) FWPanDirection panDirection;
 
+/// The pan location.
 @property (nonatomic, readonly) FWPanLocation panLocation;
 
+/// The moving drection.
 @property (nonatomic, readonly) FWPanMovingDirection panMovingDirection;
 
 /// The gesture types that the player not support.
@@ -105,12 +107,12 @@ typedef NS_OPTIONS(NSUInteger, FWPlayerDisablePanMovingDirection) {
 @property (nonatomic) FWPlayerDisablePanMovingDirection disablePanMovingDirection;
 
 /**
- Add gestures to the view.
+ Add  all gestures(singleTap、doubleTap、panGR、pinchGR) to the view.
  */
 - (void)addGestureToView:(UIView *)view;
 
 /**
- Remove gestures form the view.
+ Remove all gestures(singleTap、doubleTap、panGR、pinchGR) form the view.
  */
 - (void)removeGestureToView:(UIView *)view;
 
