@@ -1,7 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
-  - DarkModeKit (0.4.0)
-  - FWPlayer (1.0.11)
+  - FWPlayer (1.0.12)
   - HandyJSON (5.0.0)
   - IQKeyboardManagerSwift (6.4.0)
   - Kingfisher (5.6.0)
@@ -32,7 +31,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - DarkModeKit
   - FWPlayer (from `../`)
   - HandyJSON
   - IQKeyboardManagerSwift
@@ -53,7 +51,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - DarkModeKit
     - HandyJSON
     - IQKeyboardManagerSwift
     - Kingfisher
@@ -78,8 +75,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  DarkModeKit: c5e160010563a10eecc4f35d30208ad6ef3d5b26
-  FWPlayer: 9e1e730e18b3291b4cdda642148ca72f4402543b
+  FWPlayer: 8857e2c67b66c83d9989bf8b2f26dad8a8bf341b
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
   Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
@@ -98,6 +94,6 @@ SPEC CHECKSUMS:
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
   TYCyclePagerView: 2b051dade0615c70784aa34f40c646feeddb7344
 
-PODFILE CHECKSUM: 2f782a51d7f0d6f22519c55458816103e80e894e
+PODFILE CHECKSUM: 070038bb9dec434a0d7b1682ae53c610bdda5cdd
 
 COCOAPODS: 1.7.2

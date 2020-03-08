@@ -3,16 +3,6 @@
     {
       "idiom" : "universal",
       "filename" : "navigation_drawer_dark.png"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "navigation_drawer_light.png",
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ]
     }
   ],
   "info" : {

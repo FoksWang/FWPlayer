@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
     
     private lazy var castBarButton = UIButton(type: .custom).then {
         let itemSize = 24
-        let image = UIImage(named: "cast")
+        let image = UIImage(named: "cast_dark")
         $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
