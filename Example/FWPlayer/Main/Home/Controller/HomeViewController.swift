@@ -176,6 +176,7 @@ extension HomeViewController: HomeCyclePagerContainerCellDelegate {
         let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "DetailsNavigationController") as! UINavigationController
         let viewController = navigationController.topViewController as! DetailsViewController
         viewController.viewModel = viewModel
+        navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: true, completion: nil)
     }
 }
@@ -186,6 +187,7 @@ extension HomeViewController: HomeVideoPortraitContainerCellDelegate {
         let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "DetailsNavigationController") as! UINavigationController
         let viewController = navigationController.topViewController as! DetailsViewController
         viewController.viewModel = viewModel
+        navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: true, completion: nil)
     }
 }

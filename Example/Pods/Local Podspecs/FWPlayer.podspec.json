@@ -1,6 +1,6 @@
 {
   "name": "FWPlayer",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "summary": "A video player SDK for iOS.",
   "swift_versions": "5.0",
   "description": "For more information, please see README.",
@@ -14,11 +14,13 @@
   },
   "source": {
     "git": "https://github.com/FoksWang/FWPlayer.git",
-    "tag": "1.0.8"
+    "tag": "1.0.9"
   },
   "platforms": {
     "ios": "9.0"
   },
+  "requires_arc": true,
+  "static_framework": true,
   "ios": {
     "vendored_frameworks": "FWPlayer/Frameworks/*.framework"
   },
