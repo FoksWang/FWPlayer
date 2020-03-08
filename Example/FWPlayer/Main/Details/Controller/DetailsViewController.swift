@@ -53,7 +53,6 @@ class DetailsViewController: UIViewController {
         }).disposed(by: rx.disposeBag)
     }
     
-    private lazy var playerManager = FWAVPlayerManager()
     private lazy var playerControlView = FWPlayerControlView().then {
         $0.fastViewAnimated = true
         $0.autoHiddenTimeInterval = 5.0
@@ -67,7 +66,6 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupPlayer()
         setupData()
     }
     
@@ -97,7 +95,7 @@ class DetailsViewController: UIViewController {
         if self.player?.isFullScreen ?? false && self.player?.orientationObserver.fullScreenMode == .landscape {
             return .landscape
         }
-        return .portrait;
+        return .portrait
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -129,9 +127,11 @@ extension DetailsViewController {
 // MARK:- Setup player
 extension DetailsViewController {
     private func setupPlayer() {
+        let playerManager = FWAVPlayerManager()
+        
         // Enable media cache for assets
-        self.playerManager.isEnableMediaCache = viewModel.isTypeAssets()
-        Logging("isEnableMediaCache = \(self.playerManager.isEnableMediaCache)")
+        playerManager.isEnableMediaCache = viewModel.isTypeAssets()
+        Logging("isEnableMediaCache = \(playerManager.isEnableMediaCache)")
         
         // The tag value of player must be set in the cell
         self.player = FWPlayerController(scrollView: self.tableView, playerManager: playerManager, containerViewTag: 100).then {
@@ -182,11 +182,21 @@ extension DetailsViewController {
 // MARK:- Setup data
 extension DetailsViewController {
     private func setupData() {
-        viewModel.updateDataBlock = { [unowned self] (videoUrls) in
-            self.player?.assetURLs = videoUrls
-            self.tableView.reloadData()
-            self.tableView.fw_filterShouldPlayCellWhileScrolled { [unowned self] (indexPath) in
-                self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+        viewModel.updateDataBlock = { [weak self] (videoUrls) in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.tableView.reloadData() {
+                
+                // init player and enable mini player.
+                if strongSelf.player == nil {
+                    strongSelf.setupPlayer()
+                }
+                
+                strongSelf.player?.assetURLs = videoUrls
+                
+                strongSelf.tableView.fw_filterShouldPlayCellWhileScrolled { indexPath in
+                    strongSelf.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+                }
             }
         }
         viewModel.loadData()

@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     /// Prevent the interface changing to landscape mode after startup
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return .allButUpsideDown
-    }
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        return .allButUpsideDown
+//    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureSideMenu() {
         SideMenuController.preferences.basic.menuWidth = 220
         SideMenuController.preferences.basic.defaultCacheKey = "0"
+        SideMenuController.preferences.basic.statusBarBehavior = .hideOnMenu
         SideMenuController.preferences.basic.position = .under
         SideMenuController.preferences.basic.enablePanGesture = true
 

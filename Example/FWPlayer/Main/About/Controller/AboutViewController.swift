@@ -29,7 +29,7 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
         self.view.addSubview(webView)
         webView.load(URLRequest(url: URL(string: "https://fokswang.wixsite.com/home")!))
     }

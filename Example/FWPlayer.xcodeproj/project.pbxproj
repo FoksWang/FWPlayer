@@ -18,6 +18,7 @@
 		352E4ACE22D3CE020001015F /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ACD22D3CE020001015F /* DetailsViewModel.swift */; };
 		352E4ADF22D3D5780001015F /* DetailsPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E4ADD22D3D5780001015F /* DetailsPlayerCell.swift */; };
 		352E4AE022D3D5780001015F /* DetailsPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 352E4ADE22D3D5780001015F /* DetailsPlayerCell.xib */; };
+		35AA94D02415862300E22D4B /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AA94CF2415862300E22D4B /* UITableViewExtension.swift */; };
 		35E7AED522CE24EB00A7FE26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */; };
 		35E7AEDF22CE2D0F00A7FE26 /* ContentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */; };
 		35E7AEE122CE2D3A00A7FE26 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */; };
@@ -71,6 +72,7 @@
 		352E4ACD22D3CE020001015F /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		352E4ADD22D3D5780001015F /* DetailsPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPlayerCell.swift; sourceTree = "<group>"; };
 		352E4ADE22D3D5780001015F /* DetailsPlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsPlayerCell.xib; sourceTree = "<group>"; };
+		35AA94CF2415862300E22D4B /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		35E7AED422CE24EB00A7FE26 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentNavigationController.swift; sourceTree = "<group>"; };
 		35E7AEE022CE2D3A00A7FE26 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				35E7AEDE22CE2D0F00A7FE26 /* ContentNavigationController.swift */,
 				35E7AEFD22CF72A900A7FE26 /* UIImageExtension.swift */,
 				352E4AC522D3A5C60001015F /* UIViewControllerExtension.swift */,
+				35AA94CF2415862300E22D4B /* UITableViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				35E7AEF822CEC4FB00A7FE26 /* Common.swift in Sources */,
 				35E7AF0322CFE76400A7FE26 /* HomeViewModel.swift in Sources */,
 				352E4AC422D38FB20001015F /* HomeVideosFooterView.swift in Sources */,
+				35AA94D02415862300E22D4B /* UITableViewExtension.swift in Sources */,
 				35E7AF1D22D1430000A7FE26 /* HomeCyclePagerViewCell.swift in Sources */,
 				35E7AF3322D1F5AB00A7FE26 /* FWScrollView.swift in Sources */,
 				35E7AF2522D14C3F00A7FE26 /* HomeVideoPortraitCell.swift in Sources */,

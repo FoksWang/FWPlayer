@@ -85,12 +85,19 @@ class HomeViewController: UIViewController {
         setupUI()
         setupData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        UINavigationController.attemptRotationToDeviceOrientation()
+    }
 }
 
 // MARK:- Setup views
 extension HomeViewController {
     private func setupUI() {
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: castBarButton), UIBarButtonItem(customView: searchBarButton)]
         self.setupShowMessage()
     }
