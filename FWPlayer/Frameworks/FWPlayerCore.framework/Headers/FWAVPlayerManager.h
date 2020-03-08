@@ -16,9 +16,8 @@
 @property (nonatomic, strong, readonly) AVPlayerItem *playerItem;
 @property (nonatomic, strong, readonly) AVPlayer *player;
 @property (nonatomic, assign) NSTimeInterval timeRefreshInterval;
-// Video request header
+// request header for videos
 @property (nonatomic, strong) NSDictionary *requestHeader;
-
 
 /**
  Enable media cache, default is NO.

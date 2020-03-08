@@ -21,10 +21,10 @@ typedef NS_ENUM(NSInteger, FWVolumeBrightnessType) {
 
 - (void)updateProgress:(CGFloat)progress withVolumeBrightnessType:(FWVolumeBrightnessType)volumeBrightnessType;
 
-/// 添加系统音量view
+/// Add system volume view
 - (void)addSystemVolumeView;
 
-/// 移除系统音量view
+/// Remove system volume view
 - (void)removeSystemVolumeView;
 
 @end

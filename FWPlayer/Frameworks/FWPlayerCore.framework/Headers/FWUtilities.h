@@ -14,9 +14,9 @@
 
 #define FWPlayer_Image(file)                 [FWUtilities imageNamed:file]
 
-// 屏幕的宽
+// Screen width
 #define FWPlayer_ScreenWidth                 [[UIScreen mainScreen] bounds].size.width
-// 屏幕的高
+// Screen height
 #define FWPlayer_ScreenHeight                [[UIScreen mainScreen] bounds].size.height
 
 @interface FWUtilities : NSObject

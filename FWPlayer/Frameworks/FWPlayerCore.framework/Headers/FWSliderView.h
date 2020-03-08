@@ -11,13 +11,13 @@
 @protocol FWSliderViewDelegate <NSObject>
 
 @optional
-// 滑块滑动开始
+// Slider start
 - (void)sliderTouchBegan:(float)value;
-// 滑块滑动中
+// Slider sliding
 - (void)sliderValueChanged:(float)value;
-// 滑块滑动结束
+// Slider ends
 - (void)sliderTouchEnded:(float)value;
-// 滑杆点击
+// Slider click
 - (void)sliderTapped:(float)value;
 
 @end
@@ -30,55 +30,55 @@
 
 @property (nonatomic, weak) id<FWSliderViewDelegate> delegate;
 
-/** 滑块 */
+/** Slider */
 @property (nonatomic, strong, readonly) FWSliderButton *sliderBtn;
 
-/** 默认滑杆的颜色 */
+/** Default slider color */
 @property (nonatomic, strong) UIColor *maximumTrackTintColor;
 
-/** 滑杆进度颜色 */
+/** Slider progress color */
 @property (nonatomic, strong) UIColor *minimumTrackTintColor;
 
-/** 缓存进度颜色 */
+/** Cache progress color */
 @property (nonatomic, strong) UIColor *bufferTrackTintColor;
 
-/** loading进度颜色 */
+/** loading progress color */
 @property (nonatomic, strong) UIColor *loadingTintColor;
 
-/** 默认滑杆的图片 */
+/** Picture of the default slider */
 @property (nonatomic, strong) UIImage *maximumTrackImage;
 
-/** 滑杆进度的图片 */
+/** Picture of slider progress */
 @property (nonatomic, strong) UIImage *minimumTrackImage;
 
-/** 缓存进度的图片 */
+/** Picture of cache progress */
 @property (nonatomic, strong) UIImage *bufferTrackImage;
 
-/** 滑杆进度 */
+/** Slider progress */
 @property (nonatomic, assign) float value;
 
-/** 缓存进度 */
+/** Cache progress */
 @property (nonatomic, assign) float bufferValue;
 
-/** 是否允许点击，默认是YES */
+/** Whether to allow clicks, the default is YES */
 @property (nonatomic, assign) BOOL allowTapped;
 
-/** 是否允许点击，默认是YES */
+/** Whether to allow animation, the default is YES */
 @property (nonatomic, assign) BOOL animate;
 
-/** 设置滑杆的高度 */
+/** Set the height of the slider */
 @property (nonatomic, assign) CGFloat sliderHeight;
 
-/** 设置滑杆的圆角 */
+/** Set the fillet of the slider */
 @property (nonatomic, assign) CGFloat sliderRadius;
 
-/** 是否隐藏滑块（默认为NO） */
+/** Whether to hide the slider, default is NO */
 @property (nonatomic, assign) BOOL isHideSliderBlock;
 
-/// 是否正在拖动
+/// Whether dragging
 @property (nonatomic, assign) BOOL isdragging;
 
-/// 向前还是向后拖动
+/// Drag forward or backward
 @property (nonatomic, assign) BOOL isForward;
 
 @property (nonatomic, assign) CGSize thumbSize;
@@ -93,10 +93,10 @@
  */
 - (void)stopAnimating;
 
-// 设置滑块背景色
+// Set slider background color
 - (void)setBackgroundImage:(UIImage *)image forState:(UIControlState)state;
 
-// 设置滑块图片
+// Set slider image
 - (void)setThumbImage:(UIImage *)image forState:(UIControlState)state;
 
 @end

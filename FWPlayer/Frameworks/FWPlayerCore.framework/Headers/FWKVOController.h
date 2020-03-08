@@ -10,8 +10,7 @@
 
 @interface FWKVOController : NSObject
 
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithTarget:(NSObject *)target NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithTarget:(NSObject *)target;
 
 - (void)safelyAddObserver:(NSObject *)observer
                forKeyPath:(NSString *)keyPath

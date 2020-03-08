@@ -56,7 +56,7 @@ typedef void (^FWImageBlock)(UIImage *image);
 @property (nonatomic, assign) BOOL shouldAutoClipImageToViewSize;
 
 /**
- * Set the imageView 'image' with an 'url' and a placeholder.
+ * Set the imageView `image` with an `url` and a placeholder.
  *
  * The download is asynchronous and cached.
  *
@@ -66,7 +66,7 @@ typedef void (^FWImageBlock)(UIImage *image);
 - (void)setImageWithURLString:(NSString *)url placeholderImageName:(NSString *)placeholderImageName;
 
 /**
- * Set the imageView 'image' with an 'url' and a placeholder.
+ * Set the imageView `image` with an `url` and a placeholder.
  *
  * The download is asynchronous and cached.
  *
@@ -76,7 +76,7 @@ typedef void (^FWImageBlock)(UIImage *image);
 - (void)setImageWithURLString:(NSString *)url placeholder:(UIImage *)placeholderImage;
 
 /**
- * Set the imageView 'image' with an 'url', placeholder.
+ * Set the imageView `image` with an `url`, placeholder.
  *
  * The download is asynchronous and cached.
  *
@@ -93,7 +93,7 @@ typedef void (^FWImageBlock)(UIImage *image);
                    completion:(void (^)(UIImage *image))completion;
 
 /**
- * Set the imageView 'image' with an 'url', placeholder.
+ * Set the imageView `image` with an `url`, placeholder.
  *
  * The download is asynchronous and cached.
  *

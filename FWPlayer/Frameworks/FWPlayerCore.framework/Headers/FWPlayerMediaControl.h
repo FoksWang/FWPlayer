@@ -11,6 +11,7 @@
 #import "FWOrientationObserver.h"
 #import "FWPlayerGestureControl.h"
 #import "FWReachabilityManager.h"
+
 @class FWPlayerController;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -73,7 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - lock screen
 
 /**
- When set 'videoPlayer.lockedScreen'.
+ When set `videoPlayer.lockedScreen`.
  */
 - (void)lockedVideoPlayer:(FWPlayerController *)videoPlayer lockedScreen:(BOOL)locked;
 

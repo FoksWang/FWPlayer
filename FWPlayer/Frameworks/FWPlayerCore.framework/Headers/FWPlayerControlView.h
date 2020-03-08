@@ -15,114 +15,114 @@
 
 @interface FWPlayerControlView : UIView <FWPlayerMediaControl>
 
-/// 竖屏控制层的View
+/// View of portrait mode control layer
 @property (nonatomic, strong, readonly) FWPortraitControlView *portraitControlView;
 
-/// 横屏控制层的View
+/// View of landscape mode control layer
 @property (nonatomic, strong, readonly) FWLandScapeControlView *landScapeControlView;
 
-/// 加载loading
+/// Loading
 @property (nonatomic, strong, readonly) FWSpeedLoadingView *activity;
 
-/// 快进快退View
+/// Fast forward and rewind View
 @property (nonatomic, strong, readonly) UIView *fastView;
 
-/// 快进快退进度progress
+/// Fast forward fast rewind progress
 @property (nonatomic, strong, readonly) FWSliderView *fastProgressView;
 
-/// 快进快退时间
+/// Fast forward and rewind time
 @property (nonatomic, strong, readonly) UILabel *fastTimeLabel;
 
-/// 快进快退ImageView
+/// Fast forward and rewind ImageView
 @property (nonatomic, strong, readonly) UIImageView *fastImageView;
 
-/// 加载失败按钮
+/// Load failed button
 @property (nonatomic, strong, readonly) UIButton *failBtn;
 
-/// 底部播放进度
+/// Bottom playback progress
 @property (nonatomic, strong, readonly) FWSliderView *bottomPgrogress;
 
-/// 封面图
+/// cover image
 @property (nonatomic, strong, readonly) UIImageView *coverImageView;
 
-/// 高斯模糊的背景图
+/// Gaussian blurred background image
 @property (nonatomic, strong, readonly) UIImageView *bgImgView;
 
-/// 高斯模糊视图
+/// Gaussian blur view
 @property (nonatomic, strong, readonly) UIView *effectView;
 
-/// 小窗口控制层
+/// Small float view control layer
 @property (nonatomic, strong, readonly) FWSmallFloatControlView *floatControlView;
 
-/// 快进视图是否显示动画，默认NO.
+/// Whether fast-forward view shows animation, the default is NO.
 @property (nonatomic, assign) BOOL fastViewAnimated;
 
-/// 视频之外区域是否高斯模糊显示，默认YES.
+/// Whether the area outside the video is displayed with Gaussian blur. The default is YES.
 @property (nonatomic, assign) BOOL effectViewShow;
 
-/// 直接进入全屏模式，只支持全屏模式
+/// Enter full screen mode directly, only full screen mode is supported
 @property (nonatomic, assign) BOOL fullScreenOnly;
 
-/// 如果是暂停状态，seek完是否播放，默认YES
+/// If it is paused, whether to play after seek, the default is YES
 @property (nonatomic, assign) BOOL seekToPlay;
 
-/// 返回按钮点击回调
+/// Back button click callback
 @property (nonatomic, copy) void(^backBtnClickCallback)(void);
 
-/// 控制层显示或者隐藏
+/// Show or hide the control layer
 @property (nonatomic, readonly) BOOL controlViewAppeared;
 
-/// 控制层显示或者隐藏的回调
+/// Control layer show or hide callback
 @property (nonatomic, copy) void(^controlViewAppearedCallback)(BOOL appeared);
 
-/// 控制层自动隐藏的时间，默认2.5秒
+/// Control layer auto hide time, default 2.5 seconds
 @property (nonatomic, assign) NSTimeInterval autoHiddenTimeInterval;
 
-/// 控制层显示、隐藏动画的时长，默认0.25秒
+/// Control layer show and hide the duration of the animation, the default is 0.25 seconds
 @property (nonatomic, assign) NSTimeInterval autoFadeTimeInterval;
 
-/// 横向滑动控制播放进度时是否显示控制层,默认 YES.
+/// Slide horizontally to control whether the control layer is displayed during playback progress.The default is YES.
 @property (nonatomic, assign) BOOL horizontalPanShowControlView;
 
-/// prepare时候是否显示控制层,默认 NO.
+/// Whether to display the control layer during prepare.The default is NO.
 @property (nonatomic, assign) BOOL prepareShowControlView;
 
-/// prepare时候是否显示loading,默认 NO.
+/// Whether loading is displayed during prepare, the default is NO.
 @property (nonatomic, assign) BOOL prepareShowLoading;
 
-/// 是否自定义禁止pan手势，默认 NO.
+/// Whether to customize the prohibition of pan gestures. The default is NO.
 @property (nonatomic, assign) BOOL customDisablePanMovingDirection;
 
 /**
- 设置标题、封面、全屏模式
- 
- @param title 视频的标题
- @param coverUrl 视频的封面，占位图默认是灰色的
- @param fullScreenMode 全屏模式
+ Set title, cover, full screen mode
+
+ @param title Video title
+ @param coverUrl Video cover, placeholder is gray by default
+ @param fullScreenMode Full screen mode
  */
 - (void)showTitle:(NSString *)title coverURLString:(NSString *)coverUrl fullScreenMode:(FWFullScreenMode)fullScreenMode;
 
 /**
- 设置标题、封面、默认占位图、全屏模式
- 
- @param title 视频的标题
- @param coverUrl 视频的封面
- @param placeholder 指定封面的placeholder
- @param fullScreenMode 全屏模式
+ Set title, cover, default placeholder image, full screen mode
+
+ @param title Video title
+ @param coverUrl Video cover
+ @param placeholder Specify a placeholder for the cover
+ @param fullScreenMode Full screen mode
  */
 - (void)showTitle:(NSString *)title coverURLString:(NSString *)coverUrl placeholderImage:(UIImage *)placeholder fullScreenMode:(FWFullScreenMode)fullScreenMode;
 
 /**
- 设置标题、UIImage封面、全屏模式
- 
- @param title 视频的标题
- @param image 视频的封面UIImage
- @param fullScreenMode 全屏模式
+ Set title, UIImage cover, full screen mode
+
+ @param title Video title
+ @param image Video cover UIImage
+ @param fullScreenMode Full screen mode
  */
 - (void)showTitle:(NSString *)title coverImage:(UIImage *)image fullScreenMode:(FWFullScreenMode)fullScreenMode;
 
 /**
- 重置控制层
+ Reset control layer
  */
 - (void)resetControlView;
 
