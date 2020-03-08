@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '11.0'
+platform :ios, '10.0'
 
 target 'FWPlayer_Example' do
   pod 'FWPlayer', :path => '../'
