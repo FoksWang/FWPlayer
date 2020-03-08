@@ -17,10 +17,8 @@ class AboutViewController: UIViewController {
     
     private lazy var leftBarButton = UIButton(type: .custom).then {
         let itemSize = 20
-        let lightImage = UIImage(named: "navigation_drawer_dark")!
-        let darkImage = UIImage(named: "navigation_drawer_light")!
-        let image = UIImage(.dm, light: lightImage, dark: darkImage)
-        $0.setImage(image.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
+        let image = UIImage(named: "navigation_drawer")
+        $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         $0.rx.tap.subscribe(onNext: { [weak self] _ in

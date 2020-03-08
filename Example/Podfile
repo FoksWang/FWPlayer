@@ -16,7 +16,6 @@ target 'FWPlayer_Example' do
   pod 'MBProgressHUD'
   pod 'IQKeyboardManagerSwift'
   pod 'Then'
-  pod 'DarkModeKit'
   
   pod 'Alamofire'
   pod 'Moya'
