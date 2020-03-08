@@ -603,6 +603,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FWPlayer_Example/Pods-FWPlayer_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DarkModeKit/DarkModeKit.framework",
 				"${PODS_ROOT}/../../FWPlayer/Frameworks/FWPlayerCore.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -625,6 +626,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DarkModeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWPlayerCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -834,10 +836,7 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
-					"$(inherited)",
-					"COCOAPODS=1",
-				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "$(inherited) COCOAPODS=1";
 				INFOPLIST_FILE = FWPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

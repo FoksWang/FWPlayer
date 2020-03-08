@@ -12,6 +12,7 @@ import RxCocoa
 import NSObject_Rx
 import Then
 import TYCyclePagerView
+import DarkModeKit
 
 class HomeViewController: UIViewController {
     var viewModel = HomeViewModel()
@@ -46,8 +47,10 @@ class HomeViewController: UIViewController {
     private lazy var leftBarButton = UIButton(type: .custom).then {
         let width = 24
         let height = 20
-        let image = UIImage(named: "navigation_drawer_dark")
-        $0.setImage(image!.scaleToSize(size: CGSize(width: width, height: height)), for: .normal)
+        let lightImage = UIImage(named: "navigation_drawer_dark")!
+        let darkImage = UIImage(named: "navigation_drawer_light")!
+        let image = UIImage(.dm, light: lightImage, dark: darkImage)
+        $0.setImage(image.scaleToSize(size: CGSize(width: width, height: height)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: width, height: height)
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         $0.rx.tap.subscribe(onNext: { [weak self] _ in
@@ -58,8 +61,10 @@ class HomeViewController: UIViewController {
     
     private lazy var castBarButton = UIButton(type: .custom).then {
         let itemSize = 24
-        let image = UIImage(named: "cast_dark")
-        $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
+        let lightImage = UIImage(named: "cast_dark")!
+        let darkImage = UIImage(named: "cast_light")!
+        let image = UIImage(.dm, light: lightImage, dark: darkImage)
+        $0.setImage(image.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         $0.rx.tap.subscribe(onNext: { [weak self] _ in
@@ -70,8 +75,10 @@ class HomeViewController: UIViewController {
     
     private lazy var searchBarButton = UIButton(type: .custom).then {
         let itemSize = 24
-        let image = UIImage(named: "search_dark")
-        $0.setImage(image!.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
+        let lightImage = UIImage(named: "search_dark")!
+        let darkImage = UIImage(named: "search_light")!
+        let image = UIImage(.dm, light: lightImage, dark: darkImage)
+        $0.setImage(image.scaleToSize(size: CGSize(width: itemSize, height: itemSize)), for: .normal)
         $0.frame = CGRect(x: 0, y: 0, width: itemSize, height: itemSize)
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         $0.rx.tap.subscribe(onNext: { [weak self] _ in
@@ -90,7 +97,7 @@ class HomeViewController: UIViewController {
 // MARK:- Setup views
 extension HomeViewController {
     private func setupUI() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: castBarButton), UIBarButtonItem(customView: searchBarButton)]
         self.setupShowMessage()
     }

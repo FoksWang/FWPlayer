@@ -8,11 +8,11 @@
 
 ## Overview
 
-*SideMenu* is an easy-to-use side menu container controller written in Swift 4.
+*SideMenu* is an easy-to-use side menu container controller written in Swift 5.
 
 Besides all the features a *Side Menu* should have, it supports:
 
-- Four kinds of status bar behaviors
+- Four kinds of status bar behaviors (iOS 12 and earlier)
 - Three different menu position
 - Both storyboard and programmatically
 - Caching the content view controller and lazy initialization
@@ -160,7 +160,7 @@ sideMenuController?.cache(viewControllerGenerator: { self.storyboard?.instantiat
 
 ## Requirements
 
-- Xcode 10
+- Xcode 10 or later
 - iOS 9.0 or later
 
 ## License

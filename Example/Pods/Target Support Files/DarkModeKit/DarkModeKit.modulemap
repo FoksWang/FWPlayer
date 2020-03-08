@@ -1,0 +1,6 @@
+framework module DarkModeKit {
+  umbrella header "DarkModeKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

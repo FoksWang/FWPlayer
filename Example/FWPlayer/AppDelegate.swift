@@ -48,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureSideMenu() {
         SideMenuController.preferences.basic.menuWidth = 220
         SideMenuController.preferences.basic.defaultCacheKey = "0"
-        SideMenuController.preferences.basic.statusBarBehavior = .hideOnMenu
         SideMenuController.preferences.basic.position = .under
         SideMenuController.preferences.basic.enablePanGesture = true
 
