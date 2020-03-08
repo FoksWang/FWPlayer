@@ -34,11 +34,13 @@ A video player SDK for iOS, it is based on AVPlayer.
 - [x] Supports custom player view
 - [x] Supports advertising view
 - [x] Supports adding Http headers and other options to AVURLAsset
+- [x] Supports iPhone X and above
+- [x] Supports iOS 13 +
 - FFmpeg is not supported because OpenGL ES was deprecated in iOS 12
 
 ## Requirements
-- iOS 9 +
-- Xcode 10.2.1 +
+- iOS 10 +
+- Xcode 11 +
 
 ## Installation
 
@@ -55,7 +57,7 @@ You can install FWPlayer SDK in several ways:
 1. Add following pod to your `Podfile`:
 
 ```ruby
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'Your App' do
     pod 'FWPlayer'
@@ -79,7 +81,7 @@ Since FWPlayer SDK is distributed as a binary, you need to use custom `binary` r
 1. Add following to your `Cartfile`:
 
 ```
-binary "https://raw.githubusercontent.com/FoksWang/FWPlayer/master/Carthage/FWPlayer.json" ~> 1.0.7
+binary "https://raw.githubusercontent.com/FoksWang/FWPlayer/master/Carthage/FWPlayer.json" ~> 1.0.13
 ```
 
 2. Fetch framework by running:
