@@ -202,6 +202,189 @@ if self.player!.isLastAssetURL == false {
 }
 ```
 
+### Quick demo for Normal Style
+**Swift**
+```swift
+class ViewController: UIViewController {
+    
+    private let kVideoCover = "https://github.com/FoksWang/FWPlayer/blob/master/Example/FWPlayer/Images.xcassets/Common/cover_image_placeholder.imageset/cover_image_placeholder.jpg?raw=true"
+    private var player: FWPlayerController?
+    private lazy var containerView: UIImageView = {
+        let imageView = UIImageView()
+        let color = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1)
+        let placeholderImage = FWUtilities.image(with: color, size: CGSize(width: 1, height: 1))
+        imageView.setImageWithURLString(kVideoCover, placeholder: placeholderImage)
+        return imageView
+    }()
+    
+    private lazy var controlView: FWPlayerControlView = {
+        let view = FWPlayerControlView()
+        view.fastViewAnimated = true
+        view.autoHiddenTimeInterval = 5.0
+        view.autoFadeTimeInterval = 0.5
+        view.prepareShowLoading = true
+        view.prepareShowControlView = true
+        return view
+    }()
+    
+    private lazy var playButton: UIButton = {
+        var button = UIButton(type: .custom)
+        button.setImage(FWUtilities.imageNamed("FWPlayer_all_play"), for: .normal)
+        button.addTarget(self, action: #selector(playButtonClick), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var nextButton: UIButton = {
+        var button = UIButton(type: .system)
+        button.setTitle("Next", for: .normal)
+        button.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
+        return button
+    }()
+    
+    private var assetIndex = 0
+    private lazy var assetURLs: Array<URL> = {
+        var assetList = [
+            URL(string: "https://svt1-b.akamaized.net/se/svt1/master.m3u8")!,
+            URL(string: "https://svt1-b.akamaized.net/se/svt2/master.m3u8")!,
+            URL(string: "https://www.radiantmediaplayer.com/media/bbb-360p.mp4")!,
+            URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!,
+            URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")!,
+            URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4")!,
+            URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4")!,
+            URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4")!,
+            URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4")!,
+            URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4")!,
+            URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4")!,
+        ]
+        return assetList
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = .white
+        self.view.addSubview(self.containerView)
+        self.containerView.addSubview(self.playButton)
+        self.view.addSubview(self.nextButton)
+        
+        let version = FWAVPlayerManager.getVersionNumber()
+        let build = FWAVPlayerManager.getBuildNumber()
+        print("version = \(String(describing: version)), build = \(String(describing: build))")
+        
+        let playerManager = FWAVPlayerManager()
+        // Playback speed,0.5...2
+        playerManager.rate = 1.0
+        
+        // Enable media cache for assets
+        playerManager.isEnableMediaCache = false
+        
+        // Setup player
+        self.player = FWPlayerController(playerManager: playerManager, containerView: self.containerView)
+        self.player!.controlView = self.controlView
+        // Setup continue playing in the background
+        self.player!.pauseWhenAppResignActive = true
+        
+        self.player!.orientationWillChange = { [weak self] (player, isFullScreen) in
+            guard let self = self else { return }
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+//        playerManager.isMuted = true
+        
+        // Finished playing
+        self.player!.playerDidToEnd = { [weak self] (asset) in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.player!.currentPlayerManager.replay!()
+            strongSelf.player!.playTheNext()
+            if strongSelf.player!.isLastAssetURL == false {
+                strongSelf.controlView.showTitle("Video Title", coverURLString: strongSelf.kVideoCover, fullScreenMode: .landscape)
+            } else {
+                strongSelf.player!.stop()
+            }
+        }
+        self.player!.assetURLs = self.assetURLs
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.player?.isViewControllerDisappear = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.player?.isViewControllerDisappear = true
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        var w: CGFloat = UIScreen.main.bounds.size.width
+        var h = w * 9 / 16
+        var x: CGFloat = 0
+        var y: CGFloat = (UIScreen.main.bounds.size.height - h) / CGFloat(2.0)
+        self.containerView.frame = CGRect(x: x, y: y, width: w, height: h)
+        
+        w = 44
+        h = w
+        x = (self.containerView.frame.width - w) / 2
+        y = (self.containerView.frame.height - h) / 2
+        self.playButton.frame = CGRect(x: x, y: y, width: w, height: h)
+        
+        w = 100;
+        h = 30;
+        x = (self.view.frame.width - w ) / 2
+        y = self.containerView.frame.maxY + 50
+        self.nextButton.frame = CGRect(x: x, y: y, width: w, height: h)
+    }
+    
+    @IBAction func playButtonClick() {
+        print("playButtonClick")
+        self.player!.playTheIndex(assetIndex)
+        self.controlView.showTitle("Video title 1", coverURLString: kVideoCover, fullScreenMode: .automatic)
+    }
+    
+    @IBAction func nextButtonClick() {
+        print("nextButtonClick")
+        assetIndex += 1
+        if assetIndex > assetURLs.count - 1 {
+            assetIndex = assetURLs.count - 1
+        }
+        self.player!.playTheIndex(assetIndex)
+        self.controlView.showTitle("Video title 2", coverURLString: kVideoCover, fullScreenMode: .automatic)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if self.player != nil && self.player!.isFullScreen {
+            return .lightContent
+        } else {
+            return .default
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        // Support only iOS 9 and later, so return false.
+        return false
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    
+    override var shouldAutorotate: Bool {
+        return self.player?.shouldAutorotate ?? false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if self.player != nil && self.player!.isFullScreen {
+            return .landscape
+        }
+        return .portrait
+    }
+}
+```
+
 ### List Style
 **Objective-C**
 ```objective-c
