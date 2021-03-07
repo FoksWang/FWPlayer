@@ -234,12 +234,28 @@ class ViewController: UIViewController {
         return button
     }()
     
+    @objc private func playButtonClick() {
+        print("playButtonClick")
+        self.player!.playTheIndex(assetIndex)
+        self.controlView.showTitle("Video title 1", coverURLString: kVideoCover, fullScreenMode: .automatic)
+    }
+    
     private lazy var nextButton: UIButton = {
         var button = UIButton(type: .system)
         button.setTitle("Next", for: .normal)
         button.addTarget(self, action: #selector(nextButtonClick), for: .touchUpInside)
         return button
     }()
+    
+    @objc private func nextButtonClick() {
+        print("nextButtonClick")
+        assetIndex += 1
+        if assetIndex > assetURLs.count - 1 {
+            assetIndex = assetURLs.count - 1
+        }
+        self.player!.playTheIndex(assetIndex)
+        self.controlView.showTitle("Video title 2", coverURLString: kVideoCover, fullScreenMode: .automatic)
+    }
     
     private var assetIndex = 0
     private lazy var assetURLs: Array<URL> = {
@@ -337,22 +353,6 @@ class ViewController: UIViewController {
         x = (self.view.frame.width - w ) / 2
         y = self.containerView.frame.maxY + 50
         self.nextButton.frame = CGRect(x: x, y: y, width: w, height: h)
-    }
-    
-    @IBAction func playButtonClick() {
-        print("playButtonClick")
-        self.player!.playTheIndex(assetIndex)
-        self.controlView.showTitle("Video title 1", coverURLString: kVideoCover, fullScreenMode: .automatic)
-    }
-    
-    @IBAction func nextButtonClick() {
-        print("nextButtonClick")
-        assetIndex += 1
-        if assetIndex > assetURLs.count - 1 {
-            assetIndex = assetURLs.count - 1
-        }
-        self.player!.playTheIndex(assetIndex)
-        self.controlView.showTitle("Video title 2", coverURLString: kVideoCover, fullScreenMode: .automatic)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
