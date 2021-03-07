@@ -203,8 +203,39 @@ if self.player!.isLastAssetURL == false {
 ```
 
 ### Quick demo for Normal Style
+#### Step 1: In `AppDelegate`, make sure you have `var window: UIWindow?`
 **Swift**
 ```swift
+    var window: UIWindow?
+    static var shared: AppDelegate {
+        UIApplication.shared.delegate as! AppDelegate
+    }
+```
+
+#### Step 2: In `SceneDelegate`, make sure you have `var window: UIWindow?`
+**Swift**
+```swift
+    var window: UIWindow?
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
+        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
+        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = ViewController()
+        window?.makeKeyAndVisible()
+        AppDelegate.shared.window = window
+    }
+```
+
+#### Step 3: Use quick demo code `ViewController`
+**Swift**
+```swift
+import UIKit
+import FWPlayerCore
+
 class ViewController: UIViewController {
     
     private let kVideoCover = "https://github.com/FoksWang/FWPlayer/blob/master/Example/FWPlayer/Images.xcassets/Common/cover_image_placeholder.imageset/cover_image_placeholder.jpg?raw=true"
